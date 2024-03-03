@@ -13,7 +13,7 @@ public class CreateAccount {
     private Scanner sc= new Scanner(System.in);
     public void create() throws SQLException {
         while (true) {
-            System.out.println("Please enter loginname: ");
+            System.out.println("Please input login name: ");
             String loginname = sc.next();
             while (true) {
                 System.out.print("Please input customer Pin Code: ");
