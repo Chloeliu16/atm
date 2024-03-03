@@ -51,7 +51,7 @@ public class DeleteAccount {
                                     pstmt1.setString(1, accountID);
                                     int rowsAffected = pstmt1.executeUpdate();
 
-                                    System.out.println("Delete account#" + accountID + " successfully!");
+                                    System.out.println("Delete account #" + accountID + " successfully!");
                                     System.out.print("===Press any number to exit===");
                                     String command = sc.next();
                                     switch (command) {

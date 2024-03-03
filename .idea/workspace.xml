@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad98fe68-4468-471c-9b01-64bbbc3ba47a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_33.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ATM-system.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/xiaojun/ATM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/xiaojun/CreateAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/xiaojun/GetAccountID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/xiaojun/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaojun/CreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/DeleteAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xiaojun/DeleteAccount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +95,7 @@
       <workItem from="1709431712054" duration="9660000" />
       <workItem from="1709475608351" duration="18505000" />
       <workItem from="1709496585058" duration="201000" />
+      <workItem from="1709501283318" duration="2721000" />
     </task>
     <servers />
   </component>
