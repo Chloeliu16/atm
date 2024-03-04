@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class AdminAccessDB {
-    public Scanner sc= new Scanner(System.in);
+    private Scanner sc= new Scanner(System.in);
     public void access() throws ClassNotFoundException, SQLException {
         //Class.forName("com.mysql.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/atm509";
@@ -70,10 +70,10 @@ public class AdminAccessDB {
                     break;
                 case 6:
                     //exit
-                    System.out.println("You have logged out.");
+                    System.out.println("===You have logged out.===");
                     return;
                 default:
-                    System.out.println("Your operation is incorrect, please select again.");
+                    System.out.println("***Your operation is incorrect, please select again.***");
                     break;
             }
         }

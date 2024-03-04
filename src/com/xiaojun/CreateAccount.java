@@ -15,50 +15,57 @@ public class CreateAccount {
         while (true) {
             System.out.println("Please input login name: ");
             String loginname = sc.next();
-            while (true) {
-                System.out.print("Please input customer Pin Code: ");
-                String pinCode = sc.next();
-                if (Pattern.matches("\\d+", pinCode)) {
-                    if (pinCode.length() == 5) {
-                        System.out.print("Please input Holder's name: ");
-                        String holdersName = sc.next();
+            IsLoginExist isLoginExist = new IsLoginExist();
+            if(isLoginExist.islogin(loginname).equals("n")){
+                while (true) {
+                     System.out.println("Please input customer Pin Code: ");
+                     String pinCode = sc.next();
 
-                        System.out.print("Please input initial money: ");
-                        double money = sc.nextDouble();
+                     if (Pattern.matches("\\d+", pinCode)) {
+                        if (pinCode.length() == 5) {
+                          sc.nextLine();
+                          System.out.println("Please input Holder's name: ");
+                          String holdersName = sc.nextLine();
+                          System.out.println("Please input initial money: ");
+                          String smoney = sc.next();
+                          Double money = Double.valueOf(smoney);
 
-                        System.out.print("Please set customer status(active/disabled): ");
-                        String status = sc.next();
+                          System.out.println("Please set customer status(active/disabled): ");
+                          String status = sc.next();
 
-                        String newAccountID = createRandomID();
+                          String newAccountID = createRandomID();
 
-                        String sql = "INSERT INTO caccounts (account,login,pincode,holdername,balance,status) VALUES(" + newAccountID + ", \"" + loginname + "\"," + pinCode + ",\"" + holdersName + "\"," + String.valueOf(money) + ",\"" + status + "\")";
+                          String sql = "INSERT INTO caccounts (account,login,pincode,holdername,balance,status) VALUES(" + newAccountID + ", \"" + loginname + "\"," + pinCode + ",\"" + holdersName + "\"," + String.valueOf(money) + ",\"" + status + "\")";
 
-                        //Class.forName("com.mysql.jdbc.Driver");
-                        String url = "jdbc:mysql://localhost:3306/atm509";
-                        String user = "root";
-                        String pwd = "123";
-                        Connection connection = DriverManager.getConnection(url, user, pwd);
-                        Statement statement = connection.createStatement();
-                        if (statement.executeUpdate(sql) >= 1) {
-                            connection.close();
-                            System.out.println("Account#"+ newAccountID+" has been created successfully!");
-                            System.out.println("===You can press any number to return admin interface===");
-                            String command = sc.next();
-                            switch (command) {
-                                default:
-                                    return;
+                            //Class.forName("com.mysql.jdbc.Driver");
+                           String url = "jdbc:mysql://localhost:3306/atm509";
+                           String user = "root";
+                           String pwd = "123";
+                           Connection connection = DriverManager.getConnection(url, user, pwd);
+                           Statement statement = connection.createStatement();
+                           if (statement.executeUpdate(sql) >= 1) {
+                                connection.close();
+                                System.out.println("Account#" + newAccountID + " has been created successfully!");
+                               System.out.println("===You can press any number to return admin interface===");
+                               String command = sc.next();
+                               switch (command) {
+                                    default:
+                                        return;
+                                }
+                            } else {
+                            System.out.println("***Fail to Create!***");
                             }
                         } else {
-                            System.out.println("***Fail to Create!***");
+                           System.out.println("***Wrong Pin Code format, please try again!***");
+                           break;
                         }
-                    }else{
+                    } else {
                         System.out.println("***Wrong Pin Code format, please try again!***");
                         break;
-                    }
-                }else{
-                    System.out.println("***Wrong Pin Code format, please try again!***");
-                    break;
+                  }
                 }
+            }else{
+                System.out.println("***The login name has been existed, please try again***");
             }
         }
     }

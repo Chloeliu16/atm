@@ -7,9 +7,6 @@ import java.util.Scanner;
 
 public class Updatedeposit {
     private Scanner sc= new Scanner(System.in);
-//    String url = "jdbc:mysql://localhost:3306/atm509";
-//    String user = "root";
-//    String pwd = "123";
     public void updateb(String login) throws SQLException {
 
         String url = "jdbc:mysql://localhost:3306/atm509";

@@ -31,10 +31,10 @@ public class SearchAccount {
                     System.out.println("Account detail is: ");
                     System.out.println("Account# " + aaccount);
                     System.out.println("login: " + login);
-                    System.out.println("pincode " + pincode);
+                    System.out.println("pincode: " + pincode);
                     System.out.println("holdername: " + holdername);
                     System.out.println("balance: " + balance);
-                    System.out.println("Status " + status);
+                    System.out.println("Status: " + status);
                     System.out.println("===Press any number to exit===");
                     String command = sc.next();
                     switch (command) {

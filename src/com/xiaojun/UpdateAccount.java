@@ -10,7 +10,7 @@ public class UpdateAccount {
     String user = "root";
     String pwd = "123";
     public void update() throws SQLException {
-        System.out.println("Please enter the Account# you want to update");
+        System.out.println("Please enter the Account# you want to update: ");
         String accnum = sc.next();
         String url = "jdbc:mysql://localhost:3306/atm509";
         String user = "root";
@@ -54,14 +54,14 @@ public class UpdateAccount {
                 String holdername = rs1.getString("holdername");
                 double balance = rs1.getDouble("balance");
                 String status = rs1.getString("status");
-                // 输出数据
+
                 System.out.println("Account detail after update is: ");
                 System.out.println("Account# " + aaccount);
                 System.out.println("login: " + login);
                 System.out.println("pincode " + pincode);
                 System.out.println("holdername: " + holdername);
                 System.out.println("balance: " + balance);
-                System.out.println("Status " + status);}
+                System.out.println("Status: " + status);}
             }
 
         } catch (SQLException e) {
@@ -71,18 +71,25 @@ public class UpdateAccount {
     private void updatelogin(String accnum){
 
         try (Connection connection = DriverManager.getConnection(url, user, pwd)){
-            System.out.println("Please enter new login: ");
-            String newname = sc.next();
+            while (true) {
+                System.out.println("Please enter new login: ");
+                String newname = sc.next();
+                IsLoginExist isLoginExist = new IsLoginExist();
+                if(isLoginExist.islogin(newname).equals("n")) {
+                    String sql = "UPDATE caccounts SET login = ? WHERE account = ?";
+                    PreparedStatement pstmt = connection.prepareStatement(sql);
 
-            String sql = "UPDATE caccounts SET login = ? WHERE account = ?";
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-            // 设置参数值
-            pstmt.setString(1, newname);
-            pstmt.setString(2, accnum);
+                    pstmt.setString(1, newname);
+                    pstmt.setString(2, accnum);
 
-            // 执行更新操作
-            int rowsAffected = pstmt.executeUpdate();
-            System.out.println("Login has been updated to: "+ newname);
+                    int rowsAffected = pstmt.executeUpdate();
+                    System.out.println("Login has been updated to: " + newname);
+                    return;
+                }else{
+                    System.out.println("***The login name has been existed, please try again***");
+                }
+
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -97,18 +104,16 @@ public class UpdateAccount {
                 if (Pattern.matches("\\d+", newpinCode)) {
                     if (newpinCode.length() == 5) {
                         String sql = "UPDATE caccounts SET pincode = ? WHERE account = ?";
-                        //
                         PreparedStatement pstmt = connection.prepareStatement(sql);
-                        // 设置参数值
+
                         pstmt.setString(1, newpinCode);
                         pstmt.setString(2, accnum);
-                        // 执行更新操作
+
                         int rowsAffected = pstmt.executeUpdate();
                         System.out.println("PinCode has been updated to: " + newpinCode);
                         break;
                     } else {
                         System.out.println("***Wrong Pin Code format, please try again!***");
-
                     }
                 }else{
                     System.out.println("***Wrong Pin Code format, please try again!***");
@@ -121,8 +126,9 @@ public class UpdateAccount {
     private void updateholdername(String accnum){
 
         try (Connection connection = DriverManager.getConnection(url, user, pwd)){
+            sc.nextLine();
             System.out.println("Please enter new holdername: ");
-            String newholdername = sc.next();
+            String newholdername = sc.nextLine();
 
             String sql = "UPDATE caccounts SET holdername = ? WHERE account = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);

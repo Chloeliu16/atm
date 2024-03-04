@@ -17,9 +17,7 @@ public class WUpdateBalance {
             String sql = "SELECT account, login, pincode, holdername, balance, status FROM caccounts WHERE login = ?" ;
 
             PreparedStatement stmt1 = connection.prepareStatement(sql);
-
             stmt1.setString(1, login);
-
             ResultSet rs = stmt1.executeQuery();
 
             while (true) {
@@ -40,7 +38,7 @@ public class WUpdateBalance {
                     pstmt1.setString(2, login);
 
                     int rowsAffected = pstmt1.executeUpdate();
-                    System.out.println("Cash Successfully Withdrawn");
+                    System.out.println("Cash Successfully Withdrawn!");
                     System.out.println("Account #" + account);
                     System.out.println("Date: "+ formattedDate);
                     System.out.println("Withdrawn: " + money);
