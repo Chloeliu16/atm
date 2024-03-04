@@ -16,11 +16,10 @@ public class Withdraw {
 
             pstmt.setString(1, login);
 
-            ResultSet rs = pstmt.executeQuery();
             while (true) {
                 System.out.println("Enter the withdraw amount: ");
                 Double money = sc.nextDouble();
-
+                ResultSet rs = pstmt.executeQuery();
                 while (rs.next()) {
                     double balance = rs.getDouble("balance");
                     if(balance >= money) {
@@ -28,7 +27,7 @@ public class Withdraw {
                         wupdateBalance.updateb(login,money);
                         return;
                     }else{
-                        System.out.println("Your balance is not enough, \nYour current balance is: "+ balance + "please try less amount***");
+                        System.out.println("***Your balance is not enough*** \nYour current balance is: "+ balance + ". \n***Please try less amount***");
                     }
                 }
             }

@@ -8,10 +8,6 @@ import java.util.Scanner;
 public class ATM {
     private Scanner sc= new Scanner(System.in);
 
-    LocalDate now = LocalDate.now();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-    String formattedDate = now.format(formatter);
-
     public void start() throws SQLException, ClassNotFoundException {
         while (true) {
             System.out.println("===WELCOME, Please choose your user type===");

@@ -24,7 +24,7 @@ public class DeleteAccount {
                 System.out.println("Connect successfully！");
                 Statement statement = connection.createStatement();
 
-                System.out.println("==Delete Interface==");
+                System.out.println("===Delete Interface===");
 
                 System.out.print("Enter the account number to which you want to delete: ");
                 String accountID = sc.next();
@@ -39,7 +39,7 @@ public class DeleteAccount {
 
                 while (rs.next()) {
                     String login = rs.getString("login");
-                    System.out.println("***You wish to delete the account held by "+ login + ". \nIf this information is correct, please re-enter the account number:***");
+                    System.out.println("***You wish to delete the account held by "+ login + ".*** \nIf this information is correct, please re-enter the account number: ");
                     while (true) {
                         String reaccountID = sc.next();
                         if(accountID.equals(reaccountID)) {
@@ -63,11 +63,11 @@ public class DeleteAccount {
                                 }
                             }
                         }else{
-                            System.out.println("The account# doesn't match, try again");
+                            System.out.println("***The account# doesn't match, try again***");
                         }
                     }
                 }
-                System.out.println("The account# doesn't exit, try again");
+                System.out.println("***The account# doesn't exit, try again***");
             }
         }
 }
