@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad98fe68-4468-471c-9b01-64bbbc3ba47a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/atm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/DeleteAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/DeleteAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/DisplayBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/DisplayBalance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/Withdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/Withdraw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/DeleteAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/DeleteAccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/UpdateAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/UpdateAccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerUITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/DisplayBalanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/DisplayBalanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/UpdateDepositTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/UpdateDepositTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/WithdrawTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/WithdrawTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/login/ATMTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/login/ATMTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/AdminAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/AdminAccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/CustomerAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/CustomerAccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +35,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -173,7 +163,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/ruizh/Desktop/509 final exam/atm/src/test/java",
-    "last_opened_file_path": "C:/Users/ruizh/Desktop/509pj0420/backend",
+    "last_opened_file_path": "C:/Users/ruizh/Desktop/509final ATM/atm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -275,7 +265,7 @@
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="atm" />
+      <module name="xiaojun" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.xiaojun.Main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -334,6 +324,7 @@
       <workItem from="1714438442816" duration="1747000" />
       <workItem from="1714440623925" duration="3371000" />
       <workItem from="1714486512423" duration="11355000" />
+      <workItem from="1714509869344" duration="285000" />
     </task>
     <servers />
   </component>
