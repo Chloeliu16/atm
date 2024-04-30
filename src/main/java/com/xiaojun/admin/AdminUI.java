@@ -42,36 +42,35 @@ public class AdminUI {
     */
 
   public void showAdminUI() {
-      while (true) {
-          System.out.println("==Administrator Interface==");
-          System.out.println("===You can select one of the following options: ===");
-          System.out.println("1----Create New Account");
-          System.out.println("2----Delete Existing Account");
-          System.out.println("3----Update Account Information");
-          System.out.println("4----Search Account");
-          System.out.println("5----Exit");
+    while (true) {
+      System.out.println("==Administrator Interface==");
+      System.out.println("===You can select one of the following options: ===");
+      System.out.println("1----Create New Account");
+      System.out.println("2----Delete Existing Account");
+      System.out.println("3----Update Account Information");
+      System.out.println("4----Search Account");
+      System.out.println("5----Exit");
 
-          int command = scanner.nextInt();
-          switch (command) {
-              case 1:
-                  createAccount.adminOperate();
-                  break;
-              case 2:
-                  deleteAccount.adminOperate();
-                  break;
-              case 3:
-                  updateAccount.adminOperate();
-                  break;
-              case 4:
-                  searchAccount.adminOperate();
-                  break;
-              case 5:
-                  System.out.println("===You have logged out.===");
-                  return;
-              default:
-                  System.out.println("***Your operation is incorrect, please select again.***");
-          }
+      int command = scanner.nextInt();
+      switch (command) {
+        case 1:
+          createAccount.adminOperate();
+          break;
+        case 2:
+          deleteAccount.adminOperate();
+          break;
+        case 3:
+          updateAccount.adminOperate();
+          break;
+        case 4:
+          searchAccount.adminOperate();
+          break;
+        case 5:
+          System.out.println("===You have logged out.===");
+          return;
+        default:
+          System.out.println("***Your operation is incorrect, please select again.***");
       }
+    }
   }
-
 }

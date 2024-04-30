@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.xiaojun"},{"l":"com.xiaojun.admin"},{"l":"com.xiaojun.customer"},{"l":"com.xiaojun.login"},{"l":"com.xiaojun.model"},{"l":"com.xiaojun.repository"}];updateSearchResults();

@@ -10,6 +10,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Represents an administrator account in the system.
+ * This entity is mapped to a database table with fields for account identification,
+ * login credentials, and security pin code.
+ */
 @Data
 @Entity
 @Builder

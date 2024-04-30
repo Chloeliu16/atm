@@ -23,8 +23,9 @@ public class DisplayAccountDetail {
   }
   /** Method to display account details for a given account ID.
    */
-  public void display(Long Id) {
-    CustomerAccount exist = customerAccountRepository.findByAccountid(Id);
+
+  public void display(Long id) {
+    CustomerAccount exist = customerAccountRepository.findByAccountid(id);
     System.out.println("Account# " + exist.getAccountid());
     System.out.println("login: " + exist.getUsername());
     System.out.println("pinCode: " + exist.getPincode());

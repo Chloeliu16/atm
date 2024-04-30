@@ -1,0 +1,50 @@
+\doxysection{com.\+xiaojun.\+admin.\+Admin\+UI Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i}{}\label{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i}\index{com.xiaojun.admin.AdminUI@{com.xiaojun.admin.AdminUI}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i_a4e7168266f64049dfdfe66936801a340}{Admin\+UI}} (Scanner scanner, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}} create\+Account, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}} delete\+Account, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}} update\+Account, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}} search\+Account)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i_adce32e24e0039b94edda0f15dbc3c6b4}{show\+Admin\+UI}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component that serves as the user interface for administrative actions within the application. This class handles user interactions and delegates administrative tasks such as creating, deleting, updating, and searching for accounts to specific components that implement the IAdmin\+Operate interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i_a4e7168266f64049dfdfe66936801a340}\label{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i_a4e7168266f64049dfdfe66936801a340} 
+\index{com.xiaojun.admin.AdminUI@{com.xiaojun.admin.AdminUI}!AdminUI@{AdminUI}}
+\index{AdminUI@{AdminUI}!com.xiaojun.admin.AdminUI@{com.xiaojun.admin.AdminUI}}
+\doxysubsubsection{\texorpdfstring{AdminUI()}{AdminUI()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+admin.\+Admin\+UI.\+Admin\+UI (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}}}]{create\+Account,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}}}]{delete\+Account,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}}}]{update\+Account,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{IAdmin\+Operate}}}]{search\+Account }\end{DoxyParamCaption})}
+
+Constructs an Admin\+UI with the necessary components and a scanner for input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & The scanner to read user commands. \\
+\hline
+{\em create\+Account} & Component responsible for creating accounts. \\
+\hline
+{\em delete\+Account} & Component responsible for deleting accounts. \\
+\hline
+{\em update\+Account} & Component responsible for updating account information. \\
+\hline
+{\em search\+Account} & Component responsible for searching for accounts. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i_adce32e24e0039b94edda0f15dbc3c6b4}\label{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i_adce32e24e0039b94edda0f15dbc3c6b4} 
+\index{com.xiaojun.admin.AdminUI@{com.xiaojun.admin.AdminUI}!showAdminUI@{showAdminUI}}
+\index{showAdminUI@{showAdminUI}!com.xiaojun.admin.AdminUI@{com.xiaojun.admin.AdminUI}}
+\doxysubsubsection{\texorpdfstring{showAdminUI()}{showAdminUI()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+admin.\+Admin\+UI.\+show\+Admin\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Displays the administrative user interface and handles the selection of various administrative operations. Continuously prompts the user to choose an action and delegates the task to the appropriate component. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/admin/Admin\+UI.\+java\end{DoxyCompactItemize}

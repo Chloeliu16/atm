@@ -10,6 +10,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+/**
+ * Represents a customer account in a financial or service-oriented system.
+ * This entity class is used to map customer account details to a database table
+ * including information such as username, pincode, name, balance, and status.
+ */
 @Data
 @Entity
 @Builder
