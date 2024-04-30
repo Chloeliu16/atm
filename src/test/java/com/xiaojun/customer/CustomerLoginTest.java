@@ -66,5 +66,33 @@ public class CustomerLoginTest {
         verifyNoMoreInteractions(customerAccountRepository);
         verifyNoInteractions(customerUI);
     }
+    @Test
+    void testMultipleFailedLoginAttempts() {
+        when(scanner.next()).thenReturn("john", "wrongPin1", "john", "wrongPin2", "exit");
+        when(customerAccountRepository.findByUsernameAndPincode(eq("john"), anyString())).thenReturn(null);
 
+        customerLogin.accountLogin();
+
+        verify(scanner, times(5)).next(); // Check that inputs are processed correctly
+        verify(customerAccountRepository, times(2)).findByUsernameAndPincode(eq("john"), anyString());
+        verifyNoInteractions(customerUI); // No interactions because login never succeeds
+    }
+    @Test
+    void testExitAfterFailedAttempts() {
+        // Arrange
+        when(scanner.next())
+                .thenReturn("john", "wrongPin")  // First attempt
+                .thenReturn("john", "wrongPin")  // Second attempt
+                .thenReturn("exit");             // Exiting
+
+        when(customerAccountRepository.findByUsernameAndPincode("john", "wrongPin")).thenReturn(null);
+
+        // Act
+        customerLogin.accountLogin();
+
+        // Assert
+        verify(scanner, times(5)).next(); // Check that inputs are processed 5 times
+        verify(customerAccountRepository, times(2)).findByUsernameAndPincode("john", "wrongPin"); // Ensure called twice
+        verifyNoInteractions(customerUI); // No interactions because login never succeeds
+    }
 }

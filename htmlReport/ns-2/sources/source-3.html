@@ -1,0 +1,214 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > CreateAccount</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.xiaojun.admin</a>
+</div>
+
+<h1>Coverage Summary for Class: CreateAccount (com.xiaojun.admin)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CreateAccount</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87%
+  </span>
+  <span class="absValue">
+    (40/46)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.xiaojun.admin;
+&nbsp;
+&nbsp;import com.xiaojun.model.CustomerAccount;
+&nbsp;import com.xiaojun.repository.CustomerAccountRepository;
+&nbsp;import java.util.Scanner;
+&nbsp;import java.util.regex.Pattern;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.dao.DataAccessException;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;/**
+&nbsp; * Service class that implements the administrative operation for creating new customer accounts.
+&nbsp; * This class handles the user input necessary to gather all details required to create a new account in the system.
+&nbsp; */
+&nbsp;@Service
+&nbsp;public class CreateAccount implements IAdminOperate {
+&nbsp;
+&nbsp;  @Autowired
+&nbsp;  private CustomerAccountRepository customerAccountRepository;
+&nbsp;  private final Scanner scanner;
+&nbsp;
+&nbsp;  /**
+&nbsp;    * Constructor for CreateAccount service with dependencies injected via Spring&#39;s @Autowired annotation.
+&nbsp;    *
+&nbsp;    * @param scanner The scanner object to handle user input.
+&nbsp;    * @param customerAccountRepository The repository used for customer account operations.
+&nbsp;    */
+<b class="fc">&nbsp;  public CreateAccount(Scanner scanner, CustomerAccountRepository customerAccountRepository) {</b>
+<b class="fc">&nbsp;    this.scanner = scanner;</b>
+<b class="fc">&nbsp;    this.customerAccountRepository = customerAccountRepository;</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  /**
+&nbsp;   * Implements the admin operation to create a new customer account. Prompts the administrator for account details
+&nbsp;   * and commits them to the database if they meet validation criteria.
+&nbsp;   */
+&nbsp;  public void adminOperate() {
+&nbsp;    try {
+<b class="fc">&nbsp;      mainInputLoop();</b>
+<b class="nc">&nbsp;    } catch (DataAccessException e) {</b>
+<b class="nc">&nbsp;      System.out.println(&quot;Error accessing data: &quot; + e.getMessage());</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  private void mainInputLoop() {
+&nbsp;    while (true) {
+<b class="fc">&nbsp;      System.out.println(&quot;Please input the login name you want to create, or type &#39;exit&#39; to quit:&quot;);</b>
+<b class="fc">&nbsp;      String loginName = scanner.next();</b>
+<b class="fc">&nbsp;      if (&quot;exit&quot;.equalsIgnoreCase(loginName)) {</b>
+<b class="fc">&nbsp;        System.out.println(&quot;Exiting the creation process.&quot;);</b>
+<b class="fc">&nbsp;        break;</b>
+&nbsp;      }
+<b class="fc">&nbsp;      handleAccountCreation(loginName);</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  private void handleAccountCreation(String loginName) {
+<b class="fc">&nbsp;    CustomerAccount exist = customerAccountRepository.findByUsername(loginName);</b>
+<b class="fc">&nbsp;    if (exist == null) {</b>
+<b class="fc">&nbsp;      CustomerAccount account = new CustomerAccount();</b>
+<b class="fc">&nbsp;      account.setUsername(loginName);</b>
+<b class="fc">&nbsp;      if (collectAccountDetails(account)) {</b>
+<b class="fc">&nbsp;        customerAccountRepository.saveAndFlush(account);</b>
+<b class="fc">&nbsp;        System.out.println(&quot;Account created successfully!&quot;);</b>
+&nbsp;      }
+<b class="fc">&nbsp;    } else {</b>
+<b class="fc">&nbsp;      System.out.println(&quot;***The login name already exists, please try another login name***&quot;);</b>
+&nbsp;    }
+&nbsp;  }
+&nbsp;
+&nbsp;  private boolean collectAccountDetails(CustomerAccount account) {
+<b class="fc">&nbsp;    if (!validateAndSetPinCode(account)) {</b>
+<b class="nc">&nbsp;      return false;</b>
+&nbsp;    }
+<b class="fc">&nbsp;    System.out.println(&quot;Please input Holder&#39;s name: &quot;);</b>
+<b class="fc">&nbsp;    account.setName(scanner.nextLine());</b>
+&nbsp;
+<b class="fc">&nbsp;    if (!setInitialMoney(account)) {</b>
+<b class="nc">&nbsp;      return false;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    System.out.println(&quot;Please set customer status (active/disabled): &quot;);</b>
+<b class="fc">&nbsp;    account.setStatus(scanner.next());</b>
+<b class="fc">&nbsp;    return true;</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  private boolean validateAndSetPinCode(CustomerAccount account) {
+&nbsp;    while (true) {
+<b class="fc">&nbsp;      System.out.println(&quot;Please input customer Pin Code (5 digits): &quot;);</b>
+<b class="fc">&nbsp;      String pinCode = scanner.next();</b>
+<b class="fc">&nbsp;      scanner.nextLine();  // Clear the newline left over</b>
+<b class="fc">&nbsp;      if (Pattern.matches(&quot;\\d{5}&quot;, pinCode)) {</b>
+<b class="fc">&nbsp;        account.setPincode(pinCode);</b>
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;      } else {
+<b class="fc">&nbsp;        System.out.println(&quot;***Wrong Pin Code format, please try again!***&quot;);</b>
+&nbsp;      }
+<b class="fc">&nbsp;    }</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  private boolean setInitialMoney(CustomerAccount account) {
+<b class="fc">&nbsp;    System.out.println(&quot;Please input initial money: &quot;);</b>
+<b class="fc">&nbsp;    while (!scanner.hasNextDouble()) {</b>
+<b class="nc">&nbsp;      System.out.println(&quot;Type of number is wrong, please input correct number&quot;);</b>
+<b class="nc">&nbsp;      scanner.next();</b>
+&nbsp;    }
+<b class="fc">&nbsp;    account.setBalance(scanner.nextDouble());</b>
+<b class="fc">&nbsp;    return true;</b>
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-30 14:10</div>
+</div>
+</body>
+</html>

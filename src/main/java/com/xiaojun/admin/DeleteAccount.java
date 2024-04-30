@@ -40,7 +40,6 @@ public class DeleteAccount implements IAdminOperate {
         System.out.println("===Please input the login name you want to delete===");
 
         String loginName = scanner.next();
-
         CustomerAccount exist = customerAccountRepository.findByUsername(loginName);
         if (exist != null) {
           System.out.println("The login name you want to delete is: " + exist.getUsername());
@@ -50,15 +49,19 @@ public class DeleteAccount implements IAdminOperate {
             customerAccountRepository.delete(exist);
             System.out.println("Account deleted successfully.");
             System.out.println("Press any number to exit");
-            String command = scanner.next();
-            return;
+            scanner.next();
+            break;
+          } else {
+            System.out.println("***Invalid input, please try again***");
+            continue; // Re-prompts the user
           }
         } else {
           System.out.println("No account found with the given login name.");
+          System.out.println("Press 9 to continue deleting another account");
           System.out.println("If you want to cancel delete operation, press 0 to back");
           String delete = scanner.next();
           if ("0".equals(delete)) {
-            return;
+            break;
           }
         }
       }

@@ -1,5 +1,6 @@
 package com.xiaojun.admin;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 import java.io.ByteArrayInputStream;
@@ -62,7 +63,6 @@ public class DeleteAccountTest {
         verify(customerAccountRepository).delete(exist);
         verify(scanner, times(3)).next(); // Ensure there are three inputs as per method logic
     }
-
     @Test
     void testAccountNotFound() {
         // Arrange
@@ -79,4 +79,59 @@ public class DeleteAccountTest {
         verify(scanner, times(2)).next(); // check for the two inputs
     }
     // Add more tests for other scenarios, such as canceling the delete operation, handling non-existing account, etc.
+
+
+    @Test
+    void testDataAccessExceptionHandling() {
+        // Arrange
+        String loginName = "user123";
+        when(scanner.next()).thenReturn(loginName);
+        when(customerAccountRepository.findByUsername(loginName)).thenThrow(new DataAccessException("Database error") {});
+
+        // Act
+        deleteAccount.adminOperate();
+
+        // Assert
+        assertTrue(outContent.toString().contains("Error accessing data: Database error"));
+    }
+
+    @Test
+    void testExitWithoutDeletion() {
+        // Arrange
+        String loginName = "user123";
+        CustomerAccount exist = new CustomerAccount();
+        exist.setUsername(loginName);
+
+        // Setting up the mock to return values for each call to scanner.next()
+        when(scanner.next()).thenReturn(loginName, "9", "0");
+        when(customerAccountRepository.findByUsername(loginName)).thenReturn(exist);
+
+        // Act
+        deleteAccount.adminOperate();
+
+        // Assert
+        verify(customerAccountRepository).delete(exist);
+        assertTrue(outContent.toString().contains("Press any number to exit"));
+    }
+    @Test
+    void testInvalidCommandInput() {
+        // Arrange
+        String loginName = "user123";
+        CustomerAccount exist = new CustomerAccount();
+        exist.setUsername(loginName);
+
+        // Setting up the mock to return values for each call to scanner.next()
+        when(scanner.next()).thenReturn(loginName, "invalid_command", "0");
+        when(customerAccountRepository.findByUsername(loginName)).thenReturn(exist);
+
+        // Act
+        deleteAccount.adminOperate();
+
+        // Assert
+        verify(customerAccountRepository).findByUsername(loginName);
+        verify(customerAccountRepository, never()).delete(any(CustomerAccount.class));
+        assertTrue(outContent.toString().contains("***Invalid input, please try again***"));
+        assertTrue(outContent.toString().contains("If you want to cancel delete operation, press 0 to back"));
+    }
+
 }

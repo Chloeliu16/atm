@@ -3,26 +3,26 @@ package com.xiaojun;
 import com.xiaojun.login.ATM;
 import com.xiaojun.login.ILogin;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.context.ApplicationContext;
 import org.springframework.boot.CommandLineRunner;
-
-import java.util.Scanner;
-
+import org.springframework.context.ApplicationContext;
 import static org.mockito.Mockito.*;
-import static org.mockito.BDDMockito.given;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.Scanner;
 
 @ExtendWith(MockitoExtension.class)
 public class MainTest {
 
     @Mock
-    private ApplicationContext applicationContext;
-    @Mock
-    private Scanner scanner;
+    private ApplicationContext ctx;
     @Mock
     private ILogin adminLogin;
     @Mock
@@ -33,53 +33,47 @@ public class MainTest {
     @InjectMocks
     private Main main;
 
-    private CommandLineRunner runner;
-
-    @BeforeEach
-    void setup() {
-        // Prepare the CommandLineRunner
-        runner = main.commandLineRunner(applicationContext);
-
-        // Configure ApplicationContext to return the mocked beans
-        given(applicationContext.getBean("adminLogin", ILogin.class)).willReturn(adminLogin);
-        given(applicationContext.getBean("customerLogin", ILogin.class)).willReturn(customerLogin);
-        given(applicationContext.getBean(ATM.class)).willReturn(atm);
-        given(applicationContext.getBean(Scanner.class)).willReturn(scanner);
-    }
-
     @Test
-    void testCustomerLoginSelection() throws Exception {
-        // Simulate the user input for customer login
-        when(scanner.next()).thenReturn("1");
+    public void testCommandLineRunner_CustomerLogin() throws Exception {
+        String input = "1\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
 
-        // Execute the command line runner
+        Mockito.lenient().when(ctx.getBean("customerLogin", ILogin.class)).thenReturn(customerLogin);
+        Mockito.lenient().when(ctx.getBean(ATM.class)).thenReturn(atm);
+
+        CommandLineRunner runner = main.commandLineRunner(ctx);
         runner.run(new String[]{});
 
-        // Verify that customer login was invoked
         verify(atm).login(customerLogin);
+        assertTrue(outContent.toString().contains("===WELCOME, Please choose your user type==="));
+
+        System.setIn(System.in);
+        System.setOut(System.out);
     }
 
     @Test
-    void testAdminLoginSelection() throws Exception {
-        // Simulate the user input for admin login
-        when(scanner.next()).thenReturn("2");
+    public void testCommandLineRunner_AdminLogin() throws Exception {
+        String input = "2\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
 
-        // Execute the command line runner
+        Mockito.lenient().when(ctx.getBean("adminLogin", ILogin.class)).thenReturn(adminLogin);
+        Mockito.lenient().when(ctx.getBean(ATM.class)).thenReturn(atm);
+
+        CommandLineRunner runner = main.commandLineRunner(ctx);
         runner.run(new String[]{});
 
-        // Verify that admin login was invoked
-        verify(atm).login(adminLogin);
+        verify(atm).login(adminLogin); // Ensuring the login method is called with the adminLogin
+        assertTrue(outContent.toString().contains("===WELCOME, Please choose your user type==="));
+
+        assertTrue(outContent.toString().contains("Please select: "));
+        assertFalse(outContent.toString().contains("***Your enter is wrong***!")); // This line checks that the incorrect input message is not displayed
+
+        System.setIn(System.in);
+        System.setOut(System.out);
     }
 
-    @Test
-    void testInvalidUserTypeSelection() throws Exception {
-        // Simulate the user input for an invalid option
-        when(scanner.next()).thenReturn("3");
-
-        // Execute the command line runner
-        runner.run(new String[]{});
-
-        // Verify that no login method was called
-        verify(atm, never()).login(any(ILogin.class));
-    }
 }

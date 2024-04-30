@@ -14,8 +14,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -89,4 +87,28 @@ public class WithdrawTest {
         assertTrue(outContent.toString().contains("Cash Successfully Withdrawn!"));
         assertEquals(100.0, mockAccount.getBalance(), "The balance should be updated correctly.");
     }
+
+    @Test
+    void testInsufficientFunds1() {
+        String login = "user321";
+        double balance = 300.0;
+        double withdrawalAmountFail = 400.0;
+        double withdrawalAmountSuccess = 200.0;
+
+        CustomerAccount mockAccount = new CustomerAccount();
+        mockAccount.setAccountid(1L);
+        mockAccount.setBalance(balance);
+
+        when(customerAccountRepository.findByUsername(login)).thenReturn(mockAccount);
+        when(scanner.nextDouble()).thenReturn(withdrawalAmountFail, withdrawalAmountSuccess);
+        when(scanner.next()).thenReturn("1");
+
+        withdraw.customerOperate(login);
+
+        verify(customerAccountRepository).saveAndFlush(mockAccount);
+        assertTrue(outContent.toString().contains("Cash Successfully Withdrawn!"));
+        assertEquals(100.0, mockAccount.getBalance(), "The balance should be updated correctly.");
+    }
+
+
 }

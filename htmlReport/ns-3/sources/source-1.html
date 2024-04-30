@@ -1,0 +1,166 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > CustomerLogin</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.xiaojun.customer</a>
+</div>
+
+<h1>Coverage Summary for Class: CustomerLogin (com.xiaojun.customer)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CustomerLogin</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (18/18)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.xiaojun.customer;
+&nbsp;
+&nbsp;import com.xiaojun.login.ILogin;
+&nbsp;import com.xiaojun.model.CustomerAccount;
+&nbsp;import com.xiaojun.repository.CustomerAccountRepository;
+&nbsp;import java.util.Scanner;
+&nbsp;import org.springframework.stereotype.Component;
+&nbsp;
+&nbsp;/**
+&nbsp; * Component responsible for managing customer login processes.
+&nbsp; * This class handles the authentication of customer credentials and provides access to the customer user interface upon successful login.
+&nbsp; */
+&nbsp;@Component
+&nbsp;public class CustomerLogin implements ILogin {
+&nbsp;  private final CustomerAccountRepository customerAccountRepository;
+&nbsp;  private final CustomerUI customerUI;
+&nbsp;  private final Scanner scanner;
+&nbsp;  /**
+&nbsp;   * Constructs a CustomerLogin with necessary dependencies for handling login processes.
+&nbsp;   *
+&nbsp;   * @param scanner Scanner object to read user inputs.
+&nbsp;   * @param customerAccountRepository Repository to interact with customer account data.
+&nbsp;   * @param customerUI User interface component for customer interactions after login.
+&nbsp;   */
+&nbsp;
+&nbsp;  public CustomerLogin(
+&nbsp;      Scanner scanner,
+&nbsp;      CustomerAccountRepository customerAccountRepository,
+<b class="fc">&nbsp;      CustomerUI customerUI) {</b>
+<b class="fc">&nbsp;    this.scanner = scanner;</b>
+<b class="fc">&nbsp;    this.customerAccountRepository = customerAccountRepository;</b>
+<b class="fc">&nbsp;    this.customerUI = customerUI;</b>
+&nbsp;  }
+&nbsp;  /**
+&nbsp;   * Handles the account login process for customers. Prompts for login and pin code,
+&nbsp;   * validates them against the stored credentials, and grants access to the customer UI upon successful authentication.
+&nbsp;   * If authentication fails, the user is prompted to try again.
+&nbsp;   */
+&nbsp;
+&nbsp;  @SuppressWarnings(&quot;checkstyle:Indentation&quot;)
+&nbsp;  @Override
+&nbsp;  public void accountLogin() {
+<b class="fc">&nbsp;    System.out.println(&quot;Connect system successfully!&quot;);</b>
+&nbsp;    while (true) {
+<b class="fc">&nbsp;      System.out.println(&quot;Enter login name (type &#39;exit&#39; to quit): &quot;);</b>
+<b class="fc">&nbsp;      String login = scanner.next();</b>
+<b class="fc">&nbsp;      if (&quot;exit&quot;.equalsIgnoreCase(login)) {</b>
+<b class="fc">&nbsp;        System.out.println(&quot;Exiting login process.&quot;);</b>
+<b class="fc">&nbsp;        break;</b>
+&nbsp;      }
+<b class="fc">&nbsp;      System.out.println(&quot;Enter Pin code: &quot;);</b>
+<b class="fc">&nbsp;      String pinCode = scanner.next();</b>
+<b class="fc">&nbsp;      CustomerAccount customer = customerAccountRepository.findByUsernameAndPincode(login, pinCode);</b>
+<b class="fc">&nbsp;      if (customer != null) {</b>
+<b class="fc">&nbsp;        customerUI.showCustomerUI(login);</b>
+<b class="fc">&nbsp;        break;</b>
+&nbsp;      } else {
+<b class="fc">&nbsp;        System.out.println(&quot;***Your info is wrong, please try again!***&quot;);</b>
+&nbsp;      }
+<b class="fc">&nbsp;    }</b>
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-30 14:10</div>
+</div>
+</body>
+</html>

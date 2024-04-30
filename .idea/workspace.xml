@@ -5,23 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad98fe68-4468-471c-9b01-64bbbc3ba47a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/atm509_aaccounts.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/atm509_caccounts.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/AdminUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/AdminUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/CreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/CreateAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/DisplayAccountDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/DisplayAccountDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/WUpdateBalance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/login/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/login/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/login/ILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/login/ILogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/model/AdminAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/model/AdminAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/model/CustomerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/model/CustomerAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/repository/AdminAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/repository/AdminAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/repository/CustomerAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/repository/CustomerAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/WUpdateBalance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaojun/login/ATM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/login/ATM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaojun/repository/CustomerAccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/repository/CustomerAccountRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/DeleteAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/DeleteAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/DisplayBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/DisplayBalance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/Withdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/Withdraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/DeleteAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/DeleteAccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/UpdateAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/admin/UpdateAccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerLoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/CustomerUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/DisplayBalanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/DisplayBalanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/UpdateDepositTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/UpdateDepositTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/WithdrawTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/customer/WithdrawTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/login/ATMTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/login/ATMTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/AdminAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/AdminAccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/CustomerAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaojun/model/CustomerAccountTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,9 @@
   </component>
   <component name="EditorConfigPreviewManager">
     <editorConfig file="$PROJECT_DIR$/src/.editorconfig" previewFile="$PROJECT_DIR$/src/main/java/com/xiaojun/Main.java" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\ruizh\Desktop\509 final exam\atm\htmlReport" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,6 +45,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -56,17 +60,18 @@
   "keyToString": {
     "Application.ATM.executor": "Run",
     "Application.Test.executor": "Run",
-    "JUnit.ATMTest.executor": "Run",
-    "JUnit.AdminLoginTest.executor": "Run",
+    "JUnit.ATMTest.executor": "Coverage",
+    "JUnit.AdminAccountTest.executor": "Coverage",
+    "JUnit.AdminLoginTest.executor": "Coverage",
     "JUnit.AdminLoginTest.testDataAccessException.executor": "Run",
     "JUnit.AdminLoginTest.testSuccessfulLogin.executor": "Run",
-    "JUnit.AdminUITest.executor": "Run",
+    "JUnit.AdminUITest.executor": "Coverage",
     "JUnit.AdminUITest.shouldInvokeDeleteAccountWhenOptionTwoIsSelected.executor": "Run",
     "JUnit.AdminUITest.shouldInvokeSearchAccountWhenOptionFourIsSelected.executor": "Run",
     "JUnit.AdminUITest.testCreateAccountOptionSelected.executor": "Run",
     "JUnit.AdminUITest.testDeleteAccountOptionSelected.executor": "Run",
     "JUnit.AdminUITest.testExitOptionSelected.executor": "Run",
-    "JUnit.CreateAccountTest.executor": "Run",
+    "JUnit.CreateAccountTest.executor": "Coverage",
     "JUnit.CreateAccountTest.shouldAskForPinAgainIfInvalid.executor": "Run",
     "JUnit.CreateAccountTest.shouldCreateAccountWhenUsernameDoesNotExist.executor": "Run",
     "JUnit.CreateAccountTest.shouldExitCreationWhenUserInputsExit.executor": "Run",
@@ -83,44 +88,77 @@
     "JUnit.CreateAccountTest.whenExiting_ShouldTerminateLoop.executor": "Run",
     "JUnit.CreateAccountTest.whenInputIsValidAndUserDoesNotExist_ShouldCreateAccount.executor": "Run",
     "JUnit.CreateAccountTest.whenUsernameExists_ShouldNotCreateAccount.executor": "Run",
-    "JUnit.CustomerLoginTest.executor": "Run",
+    "JUnit.CustomerAccountTest.executor": "Coverage",
+    "JUnit.CustomerLoginTest.executor": "Coverage",
+    "JUnit.CustomerLoginTest.testExitAfterFailedAttempts.executor": "Run",
     "JUnit.CustomerLoginTest.testExitLoginProcess.executor": "Run",
     "JUnit.CustomerLoginTest.testFailedLoginAttempts.executor": "Run",
+    "JUnit.CustomerLoginTest.testIncorrectThenExit.executor": "Run",
+    "JUnit.CustomerLoginTest.testMultipleFailedLoginAttempts.executor": "Run",
     "JUnit.CustomerLoginTest.testSuccessfulLogin.executor": "Run",
-    "JUnit.CustomerUITest.executor": "Run",
+    "JUnit.CustomerUITest.executor": "Coverage",
+    "JUnit.CustomerUITest.testContinuousValidCommands.executor": "Run",
     "JUnit.CustomerUITest.testExitUI.executor": "Run",
     "JUnit.CustomerUITest.testInputMismatchException.executor": "Run",
     "JUnit.CustomerUITest.testInvalidCommand.executor": "Run",
+    "JUnit.CustomerUITest.testMultipleInvalidInputs.executor": "Run",
+    "JUnit.CustomerUITest.testUnrecognizedCommandHandled.executor": "Run",
     "JUnit.CustomerUITest.testValidCommands.executor": "Run",
     "JUnit.CustomerUITest.testWithdrawCommand.executor": "Run",
     "JUnit.DeleteAccountTest.executor": "Run",
+    "JUnit.DeleteAccountTest.testAccountNotFound.executor": "Coverage",
     "JUnit.DeleteAccountTest.testAdminOperate_DeleteAccountConfirmed.executor": "Run",
+    "JUnit.DeleteAccountTest.testDataAccessExceptionHandling.executor": "Run",
     "JUnit.DeleteAccountTest.testDeleteAccountSuccess.executor": "Run",
     "JUnit.DeleteAccountTest.testDeleteAccountSuccessful.executor": "Run",
-    "JUnit.DisplayAccountDetailTest.executor": "Run",
+    "JUnit.DeleteAccountTest.testExitWithoutDeletion.executor": "Run",
+    "JUnit.DeleteAccountTest.testInvalidCommandInput.executor": "Run",
+    "JUnit.DisplayAccountDetailTest.executor": "Coverage",
     "JUnit.DisplayAccountDetailTest.testDisplayAccountNotExists.executor": "Run",
-    "JUnit.DisplayBalanceTest.executor": "Run",
+    "JUnit.DisplayBalanceTest.executor": "Coverage",
     "JUnit.DisplayBalanceTest.testAccountNotFound.executor": "Run",
+    "JUnit.DisplayBalanceTest.testCustomerOperate_AccountNotFound.executor": "Run",
+    "JUnit.DisplayBalanceTest.testCustomerOperate_DataAccessException.executor": "Run",
     "JUnit.DisplayBalanceTest.testCustomerOperate_DisplaySuccessful.executor": "Run",
     "JUnit.DisplayBalanceTest.testCustomerOperate_HandleDataAccessException.executor": "Run",
+    "JUnit.DisplayBalanceTest.testCustomerOperate_MultipleInputsBeforeExit.executor": "Run",
     "JUnit.DisplayBalanceTest.testDataAccessExceptionHandling.executor": "Run",
     "JUnit.DisplayBalanceTest.testDisplayAccountBalance.executor": "Run",
     "JUnit.DisplayBalanceTest.testDisplayAccountDoesNotExist.executor": "Run",
-    "JUnit.MainTest.executor": "Run",
-    "JUnit.SearchAccountTest.executor": "Run",
+    "JUnit.MainTest.executor": "Coverage",
+    "JUnit.MainTest.testAdminLoginSelection.executor": "Run",
+    "JUnit.MainTest.testCommandLineRunner_AdminLogin.executor": "Run",
+    "JUnit.MainTest.testCommandLineRunner_CustomerLogin.executor": "Run",
+    "JUnit.MainTest.testCustomerLoginSelection.executor": "Run",
+    "JUnit.MainTest.testInvalidUserTypeSelection.executor": "Run",
+    "JUnit.SearchAccountTest.executor": "Coverage",
     "JUnit.SearchAccountTest.testContinueSearchingAfterNonExistentAccount.executor": "Run",
     "JUnit.SearchAccountTest.testSearchAndFindAccountThenExit.executor": "Run",
     "JUnit.SearchAccountTest.testSearchNonExistentAccountThenExit.executor": "Run",
     "JUnit.UpdateAccountTest.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_AccountDoesNotExist.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_ExitDuringUpdate.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_InvalidOption.executor": "Run",
     "JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCode.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat2.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_NonExistentAccount.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_ReturnAtStart.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_ReturnAtStart1.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_UpdatePinCodeSuccess.executor": "Run",
+    "JUnit.UpdateAccountTest.testAdminOperate_UpdateUsernameAlreadyExists.executor": "Run",
     "JUnit.UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess.executor": "Run",
     "JUnit.UpdateAccountTest.testAdminOperate_UpdateUsername_Successful.executor": "Run",
-    "JUnit.UpdateDepositTest.executor": "Run",
+    "JUnit.UpdateDepositTest.executor": "Coverage",
+    "JUnit.UpdateDepositTest.testCustomerOperate_AccountNotFound.executor": "Run",
     "JUnit.UpdateDepositTest.testCustomerOperate_DataAccessException.executor": "Run",
+    "JUnit.UpdateDepositTest.testCustomerOperate_InputMismatchException.executor": "Run",
     "JUnit.UpdateDepositTest.testCustomerOperate_SuccessfulDeposit.executor": "Run",
+    "JUnit.UpdateDepositTest.testCustomerOperate_SuccessfulDeposit1.executor": "Run",
     "JUnit.UpdateDepositTest.testCustomerOperate_ValidInput.executor": "Run",
-    "JUnit.WithdrawTest.executor": "Run",
+    "JUnit.WithdrawTest.executor": "Coverage",
     "JUnit.WithdrawTest.testInsufficientFunds.executor": "Run",
+    "JUnit.WithdrawTest.testInsufficientFunds1.executor": "Run",
     "JUnit.WithdrawTest.testSuccessfulWithdrawal.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -144,7 +182,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -155,53 +193,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">
-    <configuration name="ATMTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="atm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaojun.login.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaojun.login" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaojun.login.ATMTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeleteAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="atm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaojun.admin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.DeleteAccountTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeleteAccountTest.testDeleteAccountSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="atm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaojun.admin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.DeleteAccountTest" />
-      <option name="METHOD_NAME" value="testDeleteAccountSuccess" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UpdateAccountTest.testAdminOperate_InvalidPinCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UpdateAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atm" />
       <extension name="coverage">
         <pattern>
@@ -211,13 +203,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
       <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
-      <option name="METHOD_NAME" value="testAdminOperate_InvalidPinCode" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UpdateAccountTest.testAdminOperate_InvalidOption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atm" />
       <extension name="coverage">
         <pattern>
@@ -227,7 +218,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
       <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
-      <option name="METHOD_NAME" value="testAdminOperate_UpdateUsernameSuccess" />
+      <option name="METHOD_NAME" value="testAdminOperate_InvalidOption" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
+      <option name="METHOD_NAME" value="testAdminOperate_InvalidPinCodeFormat" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
+      <option name="METHOD_NAME" value="testAdminOperate_InvalidPinCodeFormat2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateAccountTest.testAdminOperate_ReturnAtStart1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
+      <option name="METHOD_NAME" value="testAdminOperate_ReturnAtStart1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -243,20 +282,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ATMTest" />
-      <item itemvalue="JUnit.DeleteAccountTest" />
-      <item itemvalue="JUnit.DeleteAccountTest.testDeleteAccountSuccess" />
-      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCode" />
-      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess" />
+      <item itemvalue="JUnit.UpdateAccountTest" />
+      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidOption" />
+      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat" />
+      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat2" />
+      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_ReturnAtStart1" />
       <item itemvalue="Spring Boot.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ATMTest" />
-        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess" />
-        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCode" />
-        <item itemvalue="JUnit.DeleteAccountTest" />
-        <item itemvalue="JUnit.DeleteAccountTest.testDeleteAccountSuccess" />
+        <item itemvalue="JUnit.UpdateAccountTest" />
+        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_ReturnAtStart1" />
+        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidOption" />
+        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat" />
+        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat2" />
       </list>
     </recent_temporary>
   </component>
@@ -294,6 +333,7 @@
       <workItem from="1714437786128" duration="463000" />
       <workItem from="1714438442816" duration="1747000" />
       <workItem from="1714440623925" duration="3371000" />
+      <workItem from="1714486512423" duration="11355000" />
     </task>
     <servers />
   </component>
@@ -314,5 +354,59 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/atm$DeleteAccountTest.ic" NAME="DeleteAccountTest Coverage Results" MODIFIED="1714496212345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1714496474118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$UpdateAccountTest.ic" NAME="UpdateAccountTest Coverage Results" MODIFIED="1714500562161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$SearchAccountTest.ic" NAME="SearchAccountTest Coverage Results" MODIFIED="1714496581883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$WithdrawTest.ic" NAME="WithdrawTest Coverage Results" MODIFIED="1714499441425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.customer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$DisplayBalanceTest.ic" NAME="DisplayBalanceTest Coverage Results" MODIFIED="1714498678359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.customer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$AdminUITest.ic" NAME="AdminUITest Coverage Results" MODIFIED="1714496532066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$CustomerLoginTest.ic" NAME="CustomerLoginTest Coverage Results" MODIFIED="1714497737515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.customer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$CreateAccountTest.ic" NAME="CreateAccountTest Coverage Results" MODIFIED="1714496546995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$CustomerAccountTest.ic" NAME="CustomerAccountTest Coverage Results" MODIFIED="1714494327804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$ATMTest.ic" NAME="ATMTest Coverage Results" MODIFIED="1714493942780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.login.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$CustomerUITest.ic" NAME="CustomerUITest Coverage Results" MODIFIED="1714497869246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.customer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$UpdateDepositTest.ic" NAME="UpdateDepositTest Coverage Results" MODIFIED="1714499103533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.customer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$Main.ic" NAME="Main Coverage Results" MODIFIED="1714493738476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/atm$DeleteAccountTest_testAccountNotFound.ic" NAME="DeleteAccountTest.testAccountNotFound Coverage Results" MODIFIED="1714495872094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$DisplayAccountDetailTest.ic" NAME="DisplayAccountDetailTest Coverage Results" MODIFIED="1714496563903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$AdminLoginTest.ic" NAME="AdminLoginTest Coverage Results" MODIFIED="1714496494927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.admin.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/atm$AdminAccountTest.ic" NAME="AdminAccountTest Coverage Results" MODIFIED="1714499543043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.xiaojun.model.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -1,0 +1,173 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > AdminLogin</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.xiaojun.admin</a>
+</div>
+
+<h1>Coverage Summary for Class: AdminLogin (com.xiaojun.admin)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AdminLogin</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92%
+  </span>
+  <span class="absValue">
+    (23/25)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.xiaojun.admin;
+&nbsp;
+&nbsp;import com.xiaojun.login.ILogin;
+&nbsp;import com.xiaojun.model.AdminAccount;
+&nbsp;import com.xiaojun.repository.AdminAccountRepository;
+&nbsp;import java.util.Scanner;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Component;
+&nbsp;
+&nbsp;
+&nbsp;/** Component responsible for handling the login process for administrators.
+&nbsp;   * It facilitates authentication against stored admin credentials and provides access to the admin user interface upon successful login.
+&nbsp; */
+&nbsp;@Component
+&nbsp;public class AdminLogin implements ILogin {
+&nbsp;  private final AdminUI adminUI;
+&nbsp;  private final Scanner scanner;
+&nbsp;  private final AdminAccountRepository adminAccountRepository;
+&nbsp;  /**
+&nbsp;    * Constructs an AdminLogin instance with necessary dependencies.
+&nbsp;    *
+&nbsp;    * @param scanner Scanner object to handle user input.
+&nbsp;    * @param adminUI User interface component for admin functions.
+&nbsp;    * @param adminAccountRepository Repository to access admin account credentials.
+&nbsp;    */
+&nbsp;
+&nbsp;  @Autowired
+<b class="fc">&nbsp;  public AdminLogin(Scanner scanner, AdminUI adminUI, AdminAccountRepository adminAccountRepository) {</b>
+<b class="fc">&nbsp;    this.scanner = scanner;</b>
+<b class="fc">&nbsp;    this.adminUI = adminUI;</b>
+<b class="fc">&nbsp;    this.adminAccountRepository = adminAccountRepository;</b>
+&nbsp;  }
+&nbsp;  /**
+&nbsp;    * Handles the account login process for administrators. Prompts for username and password,
+&nbsp;    * validates them against the repository, and grants access to the admin UI upon successful authentication.
+&nbsp;    * Users can exit the login process by typing &#39;exit&#39;.
+&nbsp;    */
+&nbsp;
+&nbsp;  public void accountLogin() {
+&nbsp;    try {
+<b class="fc">&nbsp;      System.out.println(&quot;Connect successfully?&quot;);</b>
+&nbsp;
+&nbsp;      while (true) {
+<b class="fc">&nbsp;        System.out.println(&quot;Enter username (type &#39;exit&#39; to quit): &quot;);</b>
+<b class="fc">&nbsp;        String username = scanner.next();</b>
+<b class="fc">&nbsp;        if (&quot;exit&quot;.equalsIgnoreCase(username)) {</b>
+<b class="fc">&nbsp;          System.out.println(&quot;Exiting login process...&quot;);</b>
+<b class="fc">&nbsp;          break;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        System.out.println(&quot;Enter password: &quot;);</b>
+<b class="fc">&nbsp;        String password = scanner.next();</b>
+&nbsp;        try {
+<b class="fc">&nbsp;          AdminAccount exist = adminAccountRepository.findByLoginAndPincode(username, password);</b>
+<b class="fc">&nbsp;          if (exist != null) {</b>
+<b class="fc">&nbsp;            adminUI.showAdminUI();</b>
+<b class="fc">&nbsp;            break;</b>
+&nbsp;          } else {
+<b class="fc">&nbsp;            System.out.println(&quot;***Wrong info, try again!***&quot;);</b>
+&nbsp;          }
+<b class="fc">&nbsp;        } catch (RuntimeException e) {</b>
+<b class="fc">&nbsp;          System.out.println(&quot;Error accessing data: &quot; + e.getMessage());</b>
+<b class="fc">&nbsp;          break; // or continue based on your application logic</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;      }</b>
+<b class="nc">&nbsp;    } catch (Exception e) {</b>
+<b class="nc">&nbsp;      System.out.println(&quot;An unexpected error occurred: &quot; + e.getMessage());</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-30 14:10</div>
+</div>
+</body>
+</html>
