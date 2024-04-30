@@ -27,4 +27,3 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
           file: ./target/site/jacoco/jacoco.xml
-
