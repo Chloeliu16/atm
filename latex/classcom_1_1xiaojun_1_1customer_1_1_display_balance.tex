@@ -1,0 +1,61 @@
+\doxysection{com.\+xiaojun.\+customer.\+Display\+Balance Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1customer_1_1_display_balance}{}\label{classcom_1_1xiaojun_1_1customer_1_1_display_balance}\index{com.xiaojun.customer.DisplayBalance@{com.xiaojun.customer.DisplayBalance}}
+Inheritance diagram for com.\+xiaojun.\+customer.\+Display\+Balance\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1xiaojun_1_1customer_1_1_display_balance}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_display_balance_acf472cbabcaa6a3a1e94981c6ebaf6e8}{Display\+Balance}} (Scanner scanner, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}} customer\+Account\+Repository)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_display_balance_a01af43804f4d558b0145d6168ef58a84}{customer\+Operate}} (String login)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service class that implements the customer operation for displaying account balances. This class retrieves the balance information from the database and displays it to the customer. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_display_balance_acf472cbabcaa6a3a1e94981c6ebaf6e8}\label{classcom_1_1xiaojun_1_1customer_1_1_display_balance_acf472cbabcaa6a3a1e94981c6ebaf6e8} 
+\index{com.xiaojun.customer.DisplayBalance@{com.xiaojun.customer.DisplayBalance}!DisplayBalance@{DisplayBalance}}
+\index{DisplayBalance@{DisplayBalance}!com.xiaojun.customer.DisplayBalance@{com.xiaojun.customer.DisplayBalance}}
+\doxysubsubsection{\texorpdfstring{DisplayBalance()}{DisplayBalance()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+customer.\+Display\+Balance.\+Display\+Balance (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}}}]{customer\+Account\+Repository }\end{DoxyParamCaption})}
+
+Constructs a Display\+Balance service with dependencies injected via Spring\textquotesingle{}s @\+Autowired annotation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & Scanner object to read user inputs. \\
+\hline
+{\em customer\+Account\+Repository} & Repository to interact with customer account data. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_display_balance_a01af43804f4d558b0145d6168ef58a84}\label{classcom_1_1xiaojun_1_1customer_1_1_display_balance_a01af43804f4d558b0145d6168ef58a84} 
+\index{com.xiaojun.customer.DisplayBalance@{com.xiaojun.customer.DisplayBalance}!customerOperate@{customerOperate}}
+\index{customerOperate@{customerOperate}!com.xiaojun.customer.DisplayBalance@{com.xiaojun.customer.DisplayBalance}}
+\doxysubsubsection{\texorpdfstring{customerOperate()}{customerOperate()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+customer.\+Display\+Balance.\+customer\+Operate (\begin{DoxyParamCaption}\item[{String}]{login }\end{DoxyParamCaption})}
+
+Executes the operation to display the balance of a customer\textquotesingle{}s account. Retrieves the account details based on the provided login identifier and displays the current balance along with the date and time of the inquiry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & The login identifier of the customer whose balance is being queried. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{com.\+xiaojun.\+customer.\+ICustomer\+Operate}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/customer/Display\+Balance.\+java\end{DoxyCompactItemize}

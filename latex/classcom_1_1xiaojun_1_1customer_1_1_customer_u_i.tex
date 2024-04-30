@@ -1,0 +1,55 @@
+\doxysection{com.\+xiaojun.\+customer.\+Customer\+UI Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i}{}\label{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i}\index{com.xiaojun.customer.CustomerUI@{com.xiaojun.customer.CustomerUI}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i_a4894731ad29ca17a648b6f4a5e1d1437}{Customer\+UI}} (Scanner scanner, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{ICustomer\+Operate}} display\+Balance, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{ICustomer\+Operate}} update\+Deposit, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{ICustomer\+Operate}} withdraw)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i_a7ac5e474a39b09b8cc2c32a3ba17defe}{show\+Customer\+UI}} (String login)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component that serves as the user interface for customer actions within the application. This class manages customer interactions by providing options for various account operations like withdrawing, depositing, and displaying balance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i_a4894731ad29ca17a648b6f4a5e1d1437}\label{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i_a4894731ad29ca17a648b6f4a5e1d1437} 
+\index{com.xiaojun.customer.CustomerUI@{com.xiaojun.customer.CustomerUI}!CustomerUI@{CustomerUI}}
+\index{CustomerUI@{CustomerUI}!com.xiaojun.customer.CustomerUI@{com.xiaojun.customer.CustomerUI}}
+\doxysubsubsection{\texorpdfstring{CustomerUI()}{CustomerUI()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+customer.\+Customer\+UI.\+Customer\+UI (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{ICustomer\+Operate}}}]{display\+Balance,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{ICustomer\+Operate}}}]{update\+Deposit,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{ICustomer\+Operate}}}]{withdraw }\end{DoxyParamCaption})}
+
+Constructs a Customer\+UI with necessary components for handling customer operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & Scanner object to read user commands. \\
+\hline
+{\em display\+Balance} & Component that displays the balance of the customer. \\
+\hline
+{\em update\+Deposit} & Component that handles deposit operations. \\
+\hline
+{\em withdraw} & Component that handles withdrawal operations. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i_a7ac5e474a39b09b8cc2c32a3ba17defe}\label{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i_a7ac5e474a39b09b8cc2c32a3ba17defe} 
+\index{com.xiaojun.customer.CustomerUI@{com.xiaojun.customer.CustomerUI}!showCustomerUI@{showCustomerUI}}
+\index{showCustomerUI@{showCustomerUI}!com.xiaojun.customer.CustomerUI@{com.xiaojun.customer.CustomerUI}}
+\doxysubsubsection{\texorpdfstring{showCustomerUI()}{showCustomerUI()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+customer.\+Customer\+UI.\+show\+Customer\+UI (\begin{DoxyParamCaption}\item[{String}]{login }\end{DoxyParamCaption})}
+
+Displays the customer user interface and handles the selection of various banking operations. Continuously prompts the customer to choose an action and delegates the task to the appropriate component based on the selection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & The login identifier of the customer using the interface. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/customer/Customer\+UI.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,54 @@
+\doxysection{com.\+xiaojun.\+admin.\+Create\+Account Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1admin_1_1_create_account}{}\label{classcom_1_1xiaojun_1_1admin_1_1_create_account}\index{com.xiaojun.admin.CreateAccount@{com.xiaojun.admin.CreateAccount}}
+Inheritance diagram for com.\+xiaojun.\+admin.\+Create\+Account\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1xiaojun_1_1admin_1_1_create_account}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_create_account_a34beb1beeeca64e9fb323cf6e4930f1b}{Create\+Account}} (Scanner scanner, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}} customer\+Account\+Repository)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_create_account_a0e132f20f4dbca3adf516b284f9d944c}{admin\+Operate}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service class that implements the administrative operation for creating new customer accounts. This class handles the user input necessary to gather all details required to create a new account in the system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1admin_1_1_create_account_a34beb1beeeca64e9fb323cf6e4930f1b}\label{classcom_1_1xiaojun_1_1admin_1_1_create_account_a34beb1beeeca64e9fb323cf6e4930f1b} 
+\index{com.xiaojun.admin.CreateAccount@{com.xiaojun.admin.CreateAccount}!CreateAccount@{CreateAccount}}
+\index{CreateAccount@{CreateAccount}!com.xiaojun.admin.CreateAccount@{com.xiaojun.admin.CreateAccount}}
+\doxysubsubsection{\texorpdfstring{CreateAccount()}{CreateAccount()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+admin.\+Create\+Account.\+Create\+Account (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}}}]{customer\+Account\+Repository }\end{DoxyParamCaption})}
+
+Constructor for Create\+Account service with dependencies injected via Spring\textquotesingle{}s @\+Autowired annotation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & The scanner object to handle user input. \\
+\hline
+{\em customer\+Account\+Repository} & The repository used for customer account operations. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1admin_1_1_create_account_a0e132f20f4dbca3adf516b284f9d944c}\label{classcom_1_1xiaojun_1_1admin_1_1_create_account_a0e132f20f4dbca3adf516b284f9d944c} 
+\index{com.xiaojun.admin.CreateAccount@{com.xiaojun.admin.CreateAccount}!adminOperate@{adminOperate}}
+\index{adminOperate@{adminOperate}!com.xiaojun.admin.CreateAccount@{com.xiaojun.admin.CreateAccount}}
+\doxysubsubsection{\texorpdfstring{adminOperate()}{adminOperate()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+admin.\+Create\+Account.\+admin\+Operate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Implements the admin operation to create a new customer account. Prompts the administrator for account details and commits them to the database if they meet validation criteria. 
+
+Implements \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1admin_1_1_i_admin_operate}{com.\+xiaojun.\+admin.\+IAdmin\+Operate}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/admin/Create\+Account.\+java\end{DoxyCompactItemize}

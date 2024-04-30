@@ -1,0 +1,56 @@
+\doxysection{com.\+xiaojun.\+admin.\+Admin\+Login Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1admin_1_1_admin_login}{}\label{classcom_1_1xiaojun_1_1admin_1_1_admin_login}\index{com.xiaojun.admin.AdminLogin@{com.xiaojun.admin.AdminLogin}}
+Inheritance diagram for com.\+xiaojun.\+admin.\+Admin\+Login\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1xiaojun_1_1admin_1_1_admin_login}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_admin_login_aa3b043dde1bd4b2524e5973b41b43bc4}{Admin\+Login}} (Scanner scanner, \mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i}{Admin\+UI}} admin\+UI, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_admin_account_repository}{Admin\+Account\+Repository}} admin\+Account\+Repository)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_admin_login_a3ff9307b52ff8077bbeb1a76e51252e7}{account\+Login}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component responsible for handling the login process for administrators. It facilitates authentication against stored admin credentials and provides access to the admin user interface upon successful login. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1admin_1_1_admin_login_aa3b043dde1bd4b2524e5973b41b43bc4}\label{classcom_1_1xiaojun_1_1admin_1_1_admin_login_aa3b043dde1bd4b2524e5973b41b43bc4} 
+\index{com.xiaojun.admin.AdminLogin@{com.xiaojun.admin.AdminLogin}!AdminLogin@{AdminLogin}}
+\index{AdminLogin@{AdminLogin}!com.xiaojun.admin.AdminLogin@{com.xiaojun.admin.AdminLogin}}
+\doxysubsubsection{\texorpdfstring{AdminLogin()}{AdminLogin()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+admin.\+Admin\+Login.\+Admin\+Login (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{classcom_1_1xiaojun_1_1admin_1_1_admin_u_i}{Admin\+UI}}}]{admin\+UI,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_admin_account_repository}{Admin\+Account\+Repository}}}]{admin\+Account\+Repository }\end{DoxyParamCaption})}
+
+Constructs an Admin\+Login instance with necessary dependencies.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & Scanner object to handle user input. \\
+\hline
+{\em admin\+UI} & User interface component for admin functions. \\
+\hline
+{\em admin\+Account\+Repository} & Repository to access admin account credentials. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1admin_1_1_admin_login_a3ff9307b52ff8077bbeb1a76e51252e7}\label{classcom_1_1xiaojun_1_1admin_1_1_admin_login_a3ff9307b52ff8077bbeb1a76e51252e7} 
+\index{com.xiaojun.admin.AdminLogin@{com.xiaojun.admin.AdminLogin}!accountLogin@{accountLogin}}
+\index{accountLogin@{accountLogin}!com.xiaojun.admin.AdminLogin@{com.xiaojun.admin.AdminLogin}}
+\doxysubsubsection{\texorpdfstring{accountLogin()}{accountLogin()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+admin.\+Admin\+Login.\+account\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Handles the account login process for administrators. Prompts for username and password, validates them against the repository, and grants access to the admin UI upon successful authentication. Users can exit the login process by typing \textquotesingle{}exit\textquotesingle{}. 
+
+Implements \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1login_1_1_i_login}{com.\+xiaojun.\+login.\+ILogin}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/admin/Admin\+Login.\+java\end{DoxyCompactItemize}

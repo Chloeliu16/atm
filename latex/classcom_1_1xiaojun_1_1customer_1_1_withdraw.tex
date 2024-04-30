@@ -1,0 +1,61 @@
+\doxysection{com.\+xiaojun.\+customer.\+Withdraw Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1customer_1_1_withdraw}{}\label{classcom_1_1xiaojun_1_1customer_1_1_withdraw}\index{com.xiaojun.customer.Withdraw@{com.xiaojun.customer.Withdraw}}
+Inheritance diagram for com.\+xiaojun.\+customer.\+Withdraw\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1xiaojun_1_1customer_1_1_withdraw}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_withdraw_ae38e5ea8b344e74e491fcb6fbccd02dc}{Withdraw}} (Scanner scanner, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}} customer\+Account\+Repository)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_withdraw_ad01043a69e4e0714a5d25a357e6cf942}{customer\+Operate}} (String login)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service class that implements the operation for withdrawing cash from a customer\textquotesingle{}s account. This class manages the withdrawal process, ensuring that the amount withdrawn does not exceed the account balance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_withdraw_ae38e5ea8b344e74e491fcb6fbccd02dc}\label{classcom_1_1xiaojun_1_1customer_1_1_withdraw_ae38e5ea8b344e74e491fcb6fbccd02dc} 
+\index{com.xiaojun.customer.Withdraw@{com.xiaojun.customer.Withdraw}!Withdraw@{Withdraw}}
+\index{Withdraw@{Withdraw}!com.xiaojun.customer.Withdraw@{com.xiaojun.customer.Withdraw}}
+\doxysubsubsection{\texorpdfstring{Withdraw()}{Withdraw()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+customer.\+Withdraw.\+Withdraw (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}}}]{customer\+Account\+Repository }\end{DoxyParamCaption})}
+
+Constructs a Withdraw service with dependencies injected via Spring\textquotesingle{}s @\+Autowired annotation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & Scanner object to read user inputs. \\
+\hline
+{\em customer\+Account\+Repository} & Repository to interact with customer account data. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_withdraw_ad01043a69e4e0714a5d25a357e6cf942}\label{classcom_1_1xiaojun_1_1customer_1_1_withdraw_ad01043a69e4e0714a5d25a357e6cf942} 
+\index{com.xiaojun.customer.Withdraw@{com.xiaojun.customer.Withdraw}!customerOperate@{customerOperate}}
+\index{customerOperate@{customerOperate}!com.xiaojun.customer.Withdraw@{com.xiaojun.customer.Withdraw}}
+\doxysubsubsection{\texorpdfstring{customerOperate()}{customerOperate()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+customer.\+Withdraw.\+customer\+Operate (\begin{DoxyParamCaption}\item[{String}]{login }\end{DoxyParamCaption})}
+
+Executes the withdrawal operation for a customer\textquotesingle{}s account based on the provided login identifier. Prompts the user to enter an amount to withdraw, checks if the balance is sufficient, and updates the account accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & The login identifier of the customer making the withdrawal. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{com.\+xiaojun.\+customer.\+ICustomer\+Operate}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/customer/Withdraw.\+java\end{DoxyCompactItemize}

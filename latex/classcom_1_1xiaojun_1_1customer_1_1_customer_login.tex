@@ -1,0 +1,56 @@
+\doxysection{com.\+xiaojun.\+customer.\+Customer\+Login Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1customer_1_1_customer_login}{}\label{classcom_1_1xiaojun_1_1customer_1_1_customer_login}\index{com.xiaojun.customer.CustomerLogin@{com.xiaojun.customer.CustomerLogin}}
+Inheritance diagram for com.\+xiaojun.\+customer.\+Customer\+Login\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1xiaojun_1_1customer_1_1_customer_login}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_customer_login_a4b8fdf5bd52274a6a7040fef4045ac2b}{Customer\+Login}} (Scanner scanner, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}} customer\+Account\+Repository, \mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i}{Customer\+UI}} customer\+UI)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_customer_login_abf43b138695a2352413e6e480def218b}{account\+Login}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component responsible for managing customer login processes. This class handles the authentication of customer credentials and provides access to the customer user interface upon successful login. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_customer_login_a4b8fdf5bd52274a6a7040fef4045ac2b}\label{classcom_1_1xiaojun_1_1customer_1_1_customer_login_a4b8fdf5bd52274a6a7040fef4045ac2b} 
+\index{com.xiaojun.customer.CustomerLogin@{com.xiaojun.customer.CustomerLogin}!CustomerLogin@{CustomerLogin}}
+\index{CustomerLogin@{CustomerLogin}!com.xiaojun.customer.CustomerLogin@{com.xiaojun.customer.CustomerLogin}}
+\doxysubsubsection{\texorpdfstring{CustomerLogin()}{CustomerLogin()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+customer.\+Customer\+Login.\+Customer\+Login (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}}}]{customer\+Account\+Repository,  }\item[{\mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_customer_u_i}{Customer\+UI}}}]{customer\+UI }\end{DoxyParamCaption})}
+
+Constructs a Customer\+Login with necessary dependencies for handling login processes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & Scanner object to read user inputs. \\
+\hline
+{\em customer\+Account\+Repository} & Repository to interact with customer account data. \\
+\hline
+{\em customer\+UI} & User interface component for customer interactions after login. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_customer_login_abf43b138695a2352413e6e480def218b}\label{classcom_1_1xiaojun_1_1customer_1_1_customer_login_abf43b138695a2352413e6e480def218b} 
+\index{com.xiaojun.customer.CustomerLogin@{com.xiaojun.customer.CustomerLogin}!accountLogin@{accountLogin}}
+\index{accountLogin@{accountLogin}!com.xiaojun.customer.CustomerLogin@{com.xiaojun.customer.CustomerLogin}}
+\doxysubsubsection{\texorpdfstring{accountLogin()}{accountLogin()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+customer.\+Customer\+Login.\+account\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Handles the account login process for customers. Prompts for login and pin code, validates them against the stored credentials, and grants access to the customer UI upon successful authentication. If authentication fails, the user is prompted to try again. 
+
+Implements \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1login_1_1_i_login}{com.\+xiaojun.\+login.\+ILogin}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/customer/Customer\+Login.\+java\end{DoxyCompactItemize}

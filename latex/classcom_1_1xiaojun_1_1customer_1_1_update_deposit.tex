@@ -1,0 +1,61 @@
+\doxysection{com.\+xiaojun.\+customer.\+Update\+Deposit Class Reference}
+\hypertarget{classcom_1_1xiaojun_1_1customer_1_1_update_deposit}{}\label{classcom_1_1xiaojun_1_1customer_1_1_update_deposit}\index{com.xiaojun.customer.UpdateDeposit@{com.xiaojun.customer.UpdateDeposit}}
+Inheritance diagram for com.\+xiaojun.\+customer.\+Update\+Deposit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1xiaojun_1_1customer_1_1_update_deposit}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_update_deposit_aa4cf4c2dd005dc79e4b842eff691f003}{Update\+Deposit}} (Scanner scanner, \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}} customer\+Account\+Repository)
+\item 
+void \mbox{\hyperlink{classcom_1_1xiaojun_1_1customer_1_1_update_deposit_ae0172d39b6b02888f457fd2f3cad9bd5}{customer\+Operate}} (String login)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service class that implements the operation for depositing cash into a customer\textquotesingle{}s account. This class manages the input of deposit amounts and updates the account balance accordingly. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_update_deposit_aa4cf4c2dd005dc79e4b842eff691f003}\label{classcom_1_1xiaojun_1_1customer_1_1_update_deposit_aa4cf4c2dd005dc79e4b842eff691f003} 
+\index{com.xiaojun.customer.UpdateDeposit@{com.xiaojun.customer.UpdateDeposit}!UpdateDeposit@{UpdateDeposit}}
+\index{UpdateDeposit@{UpdateDeposit}!com.xiaojun.customer.UpdateDeposit@{com.xiaojun.customer.UpdateDeposit}}
+\doxysubsubsection{\texorpdfstring{UpdateDeposit()}{UpdateDeposit()}}
+{\footnotesize\ttfamily com.\+xiaojun.\+customer.\+Update\+Deposit.\+Update\+Deposit (\begin{DoxyParamCaption}\item[{Scanner}]{scanner,  }\item[{\mbox{\hyperlink{interfacecom_1_1xiaojun_1_1repository_1_1_customer_account_repository}{Customer\+Account\+Repository}}}]{customer\+Account\+Repository }\end{DoxyParamCaption})}
+
+Constructs an Update\+Deposit service with dependencies injected via Spring\textquotesingle{}s @\+Autowired annotation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner} & Scanner object to read user inputs. \\
+\hline
+{\em customer\+Account\+Repository} & Repository to interact with customer account data. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1xiaojun_1_1customer_1_1_update_deposit_ae0172d39b6b02888f457fd2f3cad9bd5}\label{classcom_1_1xiaojun_1_1customer_1_1_update_deposit_ae0172d39b6b02888f457fd2f3cad9bd5} 
+\index{com.xiaojun.customer.UpdateDeposit@{com.xiaojun.customer.UpdateDeposit}!customerOperate@{customerOperate}}
+\index{customerOperate@{customerOperate}!com.xiaojun.customer.UpdateDeposit@{com.xiaojun.customer.UpdateDeposit}}
+\doxysubsubsection{\texorpdfstring{customerOperate()}{customerOperate()}}
+{\footnotesize\ttfamily void com.\+xiaojun.\+customer.\+Update\+Deposit.\+customer\+Operate (\begin{DoxyParamCaption}\item[{String}]{login }\end{DoxyParamCaption})}
+
+Executes the deposit operation for a customer\textquotesingle{}s account based on the provided login identifier. Prompts the user to enter an amount to deposit, updates the account balance, and confirms the transaction with a detailed receipt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em login} & The login identifier of the customer making the deposit. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1xiaojun_1_1customer_1_1_i_customer_operate}{com.\+xiaojun.\+customer.\+ICustomer\+Operate}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+atm/src/main/java/com/xiaojun/customer/Update\+Deposit.\+java\end{DoxyCompactItemize}
