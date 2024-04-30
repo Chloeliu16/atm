@@ -2,12 +2,17 @@ package com.xiaojun.admin;
 
 import com.xiaojun.model.CustomerAccount;
 import com.xiaojun.repository.CustomerAccountRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import static org.mockito.Mockito.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.*;
 import java.util.Scanner;
 
 public class UpdateAccountTest {
@@ -21,12 +26,20 @@ public class UpdateAccountTest {
 
     private UpdateAccount updateAccount;
 
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
         updateAccount = new UpdateAccount(mockScanner, mockRepository, mockDisplayAccountDetail);
+        System.setOut(new PrintStream(outContent));  // Redirects standard output to outContent
     }
 
+    @AfterEach
+    public void restoreStreams() {
+        System.setOut(originalOut);  // Resets standard output to its original stream
+    }
     @Test
     public void testAdminOperate_ReturnAtStart() {
         // Arrange
@@ -88,4 +101,69 @@ public class UpdateAccountTest {
         verify(mockScanner, times(2)).next(); // For choice, invalid pin, and exit
         verify(mockRepository, never()).saveAndFlush(account); // Should not save because pin is invalid
     }
+
+    @Test
+    public void testAdminOperate_AccountDoesNotExist() {
+        // Arrange
+        Long accountId = 1L;
+        when(mockScanner.next()).thenReturn("1", "return");
+        when(mockScanner.nextLong()).thenReturn(accountId);
+        when(mockRepository.findByAccountid(accountId)).thenReturn(null);
+
+        // Act
+        updateAccount.adminOperate();
+
+        // Assert
+        verify(mockScanner, atLeastOnce()).next();
+        verify(mockRepository).findByAccountid(accountId);
+        assertTrue(outContent.toString().contains("***Non account exist***"));
+    }
+
+    @Test
+    public void testAdminOperate_ReturnAtStart1() {
+        // Arrange
+        when(mockScanner.next()).thenReturn("return");
+
+        // Act
+        updateAccount.adminOperate();
+
+        // Assert
+        verify(mockScanner).next();
+        verifyNoInteractions(mockRepository);
+    }
+
+    @Test
+    public void testAdminOperate_InvalidOption() {
+        // Arrange
+        Long accountId = 1L;
+        when(mockScanner.next()).thenReturn("invalid", "return");
+        when(mockScanner.nextLong()).thenReturn(accountId);
+        when(mockRepository.findByAccountid(accountId)).thenReturn(new CustomerAccount());
+
+        // Act
+        updateAccount.adminOperate();
+
+        // Assert
+        verify(mockScanner, atLeastOnce()).next();
+        verify(mockRepository).findByAccountid(accountId);
+        assertTrue(outContent.toString().contains("***Have exited***"));
+    }
+
+    @Test
+    public void testAdminOperate_NonExistentAccount() {
+        // Arrange
+        Long accountId = 1L;
+        when(mockScanner.next()).thenReturn("return");
+        // Since we are immediately returning, we don't need to mock further interactions
+        // when(mockScanner.nextLong()).thenReturn(accountId);
+        // when(mockRepository.findByAccountid(accountId)).thenReturn(null);
+
+        // Act
+        updateAccount.adminOperate();
+
+        // Assert
+        verify(mockScanner).next(); // Only verify that next() is called once
+        verifyNoInteractions(mockRepository); // Ensure no interactions with the repository
+    }
+
 }

@@ -42,6 +42,10 @@ public class Withdraw implements ICustomerOperate {
       while (true) {
         System.out.println("===Withdraw Interface===");
         CustomerAccount account = customerAccountRepository.findByUsername(login);
+        if (account == null) {
+          System.out.println("No account found for the provided login details.");
+          return;
+        }
         double balance = account.getBalance();
         System.out.println("Your current balance is: " + balance);
         System.out.println("Please enter the amount you wish to withdraw");

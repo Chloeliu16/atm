@@ -113,4 +113,41 @@ public class CustomerUITest {
         // Verify that the loop continues after an invalid input
         verify(mockScanner, times(2)).nextInt();
     }
+    @Test
+    public void testUnrecognizedCommandHandled() {
+        when(mockScanner.nextInt()).thenReturn(999, 5); // An unrecognized command, then exit
+        String login = "testLogin";
+
+        customerUI.showCustomerUI(login);
+
+        verify(mockScanner, times(2)).nextInt(); // Verify that nextInt is called twice
+        verifyNoInteractions(mockWithdraw); // Ensure no operations are accidentally triggered
+        verifyNoInteractions(mockUpdateDeposit);
+        verifyNoInteractions(mockDisplayBalance);
+    }
+    @Test
+    public void testMultipleInvalidInputs() {
+        when(mockScanner.nextInt()).thenThrow(new InputMismatchException())
+                .thenThrow(new InputMismatchException())
+                .thenReturn(4, 5); // Two invalid inputs, followed by a valid input to display balance, then exit
+        String login = "testLogin";
+
+        customerUI.showCustomerUI(login);
+
+        verify(mockDisplayBalance, times(1)).customerOperate(login); // Verify balance display is eventually called
+        verify(mockScanner, times(4)).nextInt(); // Check scanner is called the correct number of times
+    }
+    @Test
+    public void testContinuousValidCommands() {
+        when(mockScanner.nextInt()).thenReturn(1, 3, 4, 5); // Withdraw, Deposit, Display Balance, then Exit
+        String login = "testLogin";
+
+        customerUI.showCustomerUI(login);
+
+        verify(mockWithdraw, times(1)).customerOperate(login); // Each operation is triggered once
+        verify(mockUpdateDeposit, times(1)).customerOperate(login);
+        verify(mockDisplayBalance, times(1)).customerOperate(login);
+        verify(mockScanner, times(4)).nextInt(); // Scanner should be called once for each operation
+    }
+
 }
