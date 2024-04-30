@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad98fe68-4468-471c-9b01-64bbbc3ba47a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/atm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -163,7 +160,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/ruizh/Desktop/509 final exam/atm/src/test/java",
-    "last_opened_file_path": "C:/Users/ruizh/Desktop/509final ATM/atm",
+    "last_opened_file_path": "C:/Users/ruizh/Desktop/5091111/atm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -182,7 +179,22 @@
       <recent name="com.xiaojun.admin" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="JUnit.AdminLoginTest">
+    <configuration name="AdminLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xiaojun" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.AdminLoginTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UpdateAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atm" />
       <extension name="coverage">
@@ -230,22 +242,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="atm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xiaojun.admin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
-      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
-      <option name="METHOD_NAME" value="testAdminOperate_InvalidPinCodeFormat2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UpdateAccountTest.testAdminOperate_ReturnAtStart1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atm" />
       <extension name="coverage">
@@ -272,20 +268,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.AdminLoginTest" />
       <item itemvalue="JUnit.UpdateAccountTest" />
       <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidOption" />
       <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat" />
-      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat2" />
       <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_ReturnAtStart1" />
       <item itemvalue="Spring Boot.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AdminLoginTest" />
         <item itemvalue="JUnit.UpdateAccountTest" />
         <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_ReturnAtStart1" />
         <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidOption" />
         <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat" />
-        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCodeFormat2" />
       </list>
     </recent_temporary>
   </component>
@@ -325,6 +321,7 @@
       <workItem from="1714440623925" duration="3371000" />
       <workItem from="1714486512423" duration="11355000" />
       <workItem from="1714509869344" duration="285000" />
+      <workItem from="1714516919298" duration="265000" />
     </task>
     <servers />
   </component>
@@ -393,7 +390,7 @@
     <SUITE FILE_PATH="coverage/atm$DisplayAccountDetailTest.ic" NAME="DisplayAccountDetailTest Coverage Results" MODIFIED="1714496563903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.xiaojun.admin.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/atm$AdminLoginTest.ic" NAME="AdminLoginTest Coverage Results" MODIFIED="1714496494927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/atm$AdminLoginTest.ic" NAME="AdminLoginTest Coverage Results" MODIFIED="1714517148460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.xiaojun.admin.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/atm$AdminAccountTest.ic" NAME="AdminAccountTest Coverage Results" MODIFIED="1714499543043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
