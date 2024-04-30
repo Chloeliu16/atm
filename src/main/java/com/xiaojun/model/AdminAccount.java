@@ -1,4 +1,6 @@
-package com.xiaojun.modle;
+package com.xiaojun.model;
+
+import static jakarta.persistence.GenerationType.IDENTITY;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,19 +10,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static jakarta.persistence.GenerationType.IDENTITY;
-
 @Data
 @Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdminAccount {
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private Long accountId;
+  @Id
+  @GeneratedValue(strategy = IDENTITY)
+  private Long accountId;
 
-    private String login;
-    private String pincode;
+  private String login;
+  private String pincode;
 }
 

@@ -5,88 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad98fe68-4468-471c-9b01-64bbbc3ba47a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atm.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/AdminLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/AdminUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/CreateAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/DeleteAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/IAdminOperate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/SearchAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/admin/UpdateAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/CustomerLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/CustomerUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/DisplayBalance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/ICustomerOperate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/UpdateDeposit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/Withdraw.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/login/ATM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/login/ILogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/modle/AdminAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/modle/CustomerAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/repository/AdminAccountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/repository/CustomerAccountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/admin/AdminLogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/admin/AdminUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/admin/CreateAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/admin/DeleteAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/admin/IAdminOperate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/admin/SearchAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/admin/UpdateAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/CustomerLogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/CustomerUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/DisplayBalance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/ICustomerOperate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/UpdateDeposit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/WUpdateBalance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/customer/Withdraw.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/login/ATM.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/login/ILogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/modle/AdminAccount$AdminAccountBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/modle/AdminAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/modle/CustomerAccount$CustomerAccountBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/modle/CustomerAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/repository/AdminAccountRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/xiaojun/repository/CustomerAccountRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATM-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ATM-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/ATM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/AdminAccessDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/CreateAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/CustomerAccessDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/DeleteAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/DisplayBL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/GetAccountID.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/IsAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/IsCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/IsLoginExist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/SearchAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/UpdateAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/Updatedeposit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/WUpdateBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaojun/customer/WUpdateBalance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaojun/Withdraw.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="EditorConfigPreviewManager">
+    <editorConfig file="$PROJECT_DIR$/src/.editorconfig" previewFile="$PROJECT_DIR$/src/main/java/com/xiaojun/Main.java" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit4 &amp; Powermock" />
+        <option value="Class" />
+        <option value="JUnit5 &amp; Mockito" />
       </list>
     </option>
   </component>
@@ -105,13 +41,86 @@
   &quot;keyToString&quot;: {
     &quot;Application.ATM.executor&quot;: &quot;Run&quot;,
     &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ATMTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminLoginTest.testDataAccessException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminLoginTest.testSuccessfulLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminUITest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminUITest.shouldInvokeDeleteAccountWhenOptionTwoIsSelected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminUITest.shouldInvokeSearchAccountWhenOptionFourIsSelected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminUITest.testCreateAccountOptionSelected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminUITest.testDeleteAccountOptionSelected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminUITest.testExitOptionSelected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.shouldAskForPinAgainIfInvalid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.shouldCreateAccountWhenUsernameDoesNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.shouldExitCreationWhenUserInputsExit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.shouldRejectCreationWhenUsernameExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testAdminOperateCreateNewAccount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testAdminOperateExistingUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testAdminOperateExit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testCreateAccountSequence.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testCreateAccount_Failure_ExistingUsername.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testCreateAccount_Successful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testHandleAccountCreationNewUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testHandleAccountCreation_ExistingAccount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.testHandleAccountCreation_NewAccount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.whenExiting_ShouldTerminateLoop.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.whenInputIsValidAndUserDoesNotExist_ShouldCreateAccount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAccountTest.whenUsernameExists_ShouldNotCreateAccount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerLoginTest.testExitLoginProcess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerLoginTest.testFailedLoginAttempts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerLoginTest.testSuccessfulLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerUITest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerUITest.testExitUI.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerUITest.testInputMismatchException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerUITest.testInvalidCommand.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerUITest.testValidCommands.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerUITest.testWithdrawCommand.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteAccountTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteAccountTest.testAdminOperate_DeleteAccountConfirmed.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteAccountTest.testDeleteAccountSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteAccountTest.testDeleteAccountSuccessful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayAccountDetailTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayAccountDetailTest.testDisplayAccountNotExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayBalanceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayBalanceTest.testAccountNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayBalanceTest.testCustomerOperate_DisplaySuccessful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayBalanceTest.testCustomerOperate_HandleDataAccessException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayBalanceTest.testDataAccessExceptionHandling.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayBalanceTest.testDisplayAccountBalance.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DisplayBalanceTest.testDisplayAccountDoesNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SearchAccountTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SearchAccountTest.testContinueSearchingAfterNonExistentAccount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SearchAccountTest.testSearchAndFindAccountThenExit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SearchAccountTest.testSearchNonExistentAccountThenExit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateAccountTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCode.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateAccountTest.testAdminOperate_UpdateUsername_Successful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateDepositTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateDepositTest.testCustomerOperate_DataAccessException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateDepositTest.testCustomerOperate_SuccessfulDeposit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateDepositTest.testCustomerOperate_ValidInput.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WithdrawTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WithdrawTest.testInsufficientFunds.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WithdrawTest.testSuccessfulWithdrawal.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ruizh/Desktop/509 final exam/atm&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/ruizh/Desktop/509 final exam/atm/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ruizh/Desktop/509pj0420/backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -120,13 +129,33 @@
     &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.infernus.idea.checkstyle.CheckStyleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="ATM" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.xiaojun.Main" />
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.xiaojun" />
+      <recent name="com.xiaojun.admin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Main">
+    <configuration name="ATMTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.login" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.login.ATMTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeleteAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atm" />
       <extension name="coverage">
         <pattern>
@@ -134,20 +163,91 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.DeleteAccountTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DeleteAccountTest.testDeleteAccountSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.DeleteAccountTest" />
+      <option name="METHOD_NAME" value="testDeleteAccountSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateAccountTest.testAdminOperate_InvalidPinCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
+      <option name="METHOD_NAME" value="testAdminOperate_InvalidPinCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xiaojun.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xiaojun.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.xiaojun.admin.UpdateAccountTest" />
+      <option name="METHOD_NAME" value="testAdminOperate_UpdateUsernameSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="atm" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xiaojun.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ATMTest" />
+      <item itemvalue="JUnit.DeleteAccountTest" />
+      <item itemvalue="JUnit.DeleteAccountTest.testDeleteAccountSuccess" />
+      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCode" />
+      <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess" />
+      <item itemvalue="Spring Boot.Main" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ATM" />
+        <item itemvalue="JUnit.ATMTest" />
+        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_UpdateUsernameSuccess" />
+        <item itemvalue="JUnit.UpdateAccountTest.testAdminOperate_InvalidPinCode" />
+        <item itemvalue="JUnit.DeleteAccountTest" />
+        <item itemvalue="JUnit.DeleteAccountTest.testDeleteAccountSuccess" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
@@ -170,6 +270,14 @@
       <workItem from="1714057852746" duration="15009000" />
       <workItem from="1714247498639" duration="18362000" />
       <workItem from="1714274103623" duration="35000" />
+      <workItem from="1714313091657" duration="20363000" />
+      <workItem from="1714349896971" duration="1785000" />
+      <workItem from="1714351859337" duration="40000" />
+      <workItem from="1714354535299" duration="759000" />
+      <workItem from="1714420028937" duration="11775000" />
+      <workItem from="1714435320837" duration="2453000" />
+      <workItem from="1714437786128" duration="463000" />
+      <workItem from="1714438442816" duration="1747000" />
     </task>
     <servers />
   </component>
@@ -186,5 +294,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
