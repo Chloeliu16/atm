@@ -8,6 +8,9 @@ on: [push, pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
+    defaults: 
+      run:
+        working-directory: ./src
     strategy:
       matrix:
         java: [17]
@@ -22,7 +25,7 @@ jobs:
         run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
         
       - name: Run tests and collect coverage
-        run: mvn -B test
+        run: mvn test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         env:
