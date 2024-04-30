@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ATM {
-    public void login(ILogin ilogin) {
-        ilogin.accountLogin();
-    }
+  public void login(ILogin ilogin) {
+     ilogin.accountLogin();
+  }
 }
