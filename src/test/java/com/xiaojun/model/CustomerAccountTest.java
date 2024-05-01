@@ -32,10 +32,10 @@ public class CustomerAccountTest {
 
         assertEquals(500.00, account.getBalance());
 
-        account.setBalance(account.getBalance() + 200.00); // Adding money
+        account.setBalance(account.getBalance() + 200.00);
         assertEquals(700.00, account.getBalance());
 
-        account.setBalance(account.getBalance() - 150.00); // Subtracting money
+        account.setBalance(account.getBalance() - 150.00);
         assertEquals(550.00, account.getBalance());
     }
 

@@ -11,6 +11,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.dao.DataAccessException;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -110,5 +112,45 @@ public class WithdrawTest {
         assertEquals(100.0, mockAccount.getBalance(), "The balance should be updated correctly.");
     }
 
+    @Test
+    void testNoAccountFound() {
+        String login = "unknownUser";
+        when(customerAccountRepository.findByUsername(login)).thenReturn(null);
 
+        withdraw.customerOperate(login);
+
+        verify(customerAccountRepository, never()).saveAndFlush(any(CustomerAccount.class));
+        assertTrue(outContent.toString().contains("No account found for the provided login details."));
+    }
+    @Test
+    void testDataAccessException() {
+        String login = "user123";
+        when(customerAccountRepository.findByUsername(login)).thenThrow(new DataAccessException("Database error") {});
+
+        withdraw.customerOperate(login);
+
+        assertTrue(outContent.toString().contains("Error accessing data: Database error"));
+    }
+
+    @Test
+    void testMultipleWithdrawalAttempts() {
+        String login = "user321";
+        double balance = 300.0;
+        double withdrawalAmountFail = 400.0;
+        double withdrawalAmountSuccess = 200.0;
+
+        CustomerAccount mockAccount = new CustomerAccount();
+        mockAccount.setAccountid(1L);
+        mockAccount.setBalance(balance);
+
+        when(customerAccountRepository.findByUsername(login)).thenReturn(mockAccount);
+        when(scanner.nextDouble()).thenReturn(withdrawalAmountFail, withdrawalAmountSuccess);
+        when(scanner.next()).thenReturn("1");
+        withdraw.customerOperate(login);
+
+        verify(customerAccountRepository).saveAndFlush(mockAccount);
+        assertTrue(outContent.toString().contains("***Withdraw failed, please enter the correct amount***"));
+        assertTrue(outContent.toString().contains("Cash Successfully Withdrawn!"));
+        assertEquals(100.0, mockAccount.getBalance(), "The balance should be updated correctly after the second attempt.");
+    }
 }

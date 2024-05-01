@@ -61,13 +61,13 @@ public class SearchAccountTest {
         searchAccount.adminOperate();
 
         verify(customerAccountRepository).findByAccountid(accountId);
-        verify(scanner).nextInt(); // To capture the exit command
+        verify(scanner).nextInt();
     }
     @Test
     void testContinueSearchingAfterNonExistentAccount() {
-        // Setup
-        Long firstAccountId = 2L; // First account does not exist
-        Long secondAccountId = 1L; // Second account exists
+
+        Long firstAccountId = 2L;
+        Long secondAccountId = 1L;
         CustomerAccount foundAccount = new CustomerAccount();
         foundAccount.setAccountid(secondAccountId);
         foundAccount.setUsername("john_doe");
@@ -76,21 +76,17 @@ public class SearchAccountTest {
         foundAccount.setBalance(1000.0);
         foundAccount.setStatus("active");
 
-        // Arrange mock scanner inputs
         when(scanner.nextLong()).thenReturn(firstAccountId, secondAccountId);
-        when(scanner.nextInt()).thenReturn(9, 0); // Continue after first, exit after second
+        when(scanner.nextInt()).thenReturn(9, 0);
 
-        // Arrange repository responses
         when(customerAccountRepository.findByAccountid(firstAccountId)).thenReturn(null);
         when(customerAccountRepository.findByAccountid(secondAccountId)).thenReturn(foundAccount);
 
-        // Act
         searchAccount.adminOperate();
 
-        // Assert
-        verify(customerAccountRepository).findByAccountid(firstAccountId); // Verify that the first ID was searched
-        verify(customerAccountRepository).findByAccountid(secondAccountId); // Verify that the second ID was searched
-        verify(scanner, times(2)).nextInt(); // Verify that nextInt was called twice
+        verify(customerAccountRepository).findByAccountid(firstAccountId);
+        verify(customerAccountRepository).findByAccountid(secondAccountId);
+        verify(scanner, times(2)).nextInt();
     }
 
 

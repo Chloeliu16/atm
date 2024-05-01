@@ -41,7 +41,7 @@ public class CustomerLoginTest {
         customerLogin.accountLogin();
 
         verify(customerUI).showCustomerUI("john");
-        verify(scanner, times(2)).next(); // Check that inputs are processed correctly
+        verify(scanner, times(2)).next();
     }
 
     @Test
@@ -53,8 +53,8 @@ public class CustomerLoginTest {
 
         customerLogin.accountLogin();
 
-        verify(scanner, times(4)).next(); // Includes retry attempt
-        verify(customerUI).showCustomerUI("john"); // Should eventually show UI after correct credentials
+        verify(scanner, times(4)).next();
+        verify(customerUI).showCustomerUI("john");
     }
     @Test
     void testExitLoginProcess() {
@@ -73,26 +73,23 @@ public class CustomerLoginTest {
 
         customerLogin.accountLogin();
 
-        verify(scanner, times(5)).next(); // Check that inputs are processed correctly
+        verify(scanner, times(5)).next();
         verify(customerAccountRepository, times(2)).findByUsernameAndPincode(eq("john"), anyString());
-        verifyNoInteractions(customerUI); // No interactions because login never succeeds
+        verifyNoInteractions(customerUI);
     }
     @Test
     void testExitAfterFailedAttempts() {
-        // Arrange
         when(scanner.next())
-                .thenReturn("john", "wrongPin")  // First attempt
-                .thenReturn("john", "wrongPin")  // Second attempt
-                .thenReturn("exit");             // Exiting
+                .thenReturn("john", "wrongPin")
+                .thenReturn("john", "wrongPin")
+                .thenReturn("exit");
 
         when(customerAccountRepository.findByUsernameAndPincode("john", "wrongPin")).thenReturn(null);
 
-        // Act
         customerLogin.accountLogin();
 
-        // Assert
-        verify(scanner, times(5)).next(); // Check that inputs are processed 5 times
-        verify(customerAccountRepository, times(2)).findByUsernameAndPincode("john", "wrongPin"); // Ensure called twice
-        verifyNoInteractions(customerUI); // No interactions because login never succeeds
+        verify(scanner, times(5)).next();
+        verify(customerAccountRepository, times(2)).findByUsernameAndPincode("john", "wrongPin");
+        verifyNoInteractions(customerUI);
     }
 }
