@@ -7,10 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 import java.util.Scanner;
@@ -33,87 +31,76 @@ public class UpdateAccountTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         updateAccount = new UpdateAccount(mockScanner, mockRepository, mockDisplayAccountDetail);
-        System.setOut(new PrintStream(outContent));  // Redirects standard output to outContent
+        System.setOut(new PrintStream(outContent));
     }
 
     @AfterEach
     public void restoreStreams() {
-        System.setOut(originalOut);  // Resets standard output to its original stream
+        System.setOut(originalOut);
     }
     @Test
     public void testAdminOperate_ReturnAtStart() {
-        // Arrange
+
         when(mockScanner.next()).thenReturn("return");
 
-        // Act
         updateAccount.adminOperate();
 
-        // Assert
         verify(mockScanner).next();
         verifyNoInteractions(mockRepository);
     }
 
     @Test
     public void testAdminOperate_UpdateUsernameSuccess() {
-        // Arrange
+
         Long accountId = 1L;
         String existingUsername = "oldUsername";
         String username = "username";
         when(mockScanner.next()).thenReturn("1", "1", username);
-        //when(mockScanner.next()).thenReturn("1", accountId.toString(), "1", newUsername, "9");
+
         when(mockScanner.nextLong()).thenReturn(accountId);
         CustomerAccount account = new CustomerAccount();
         account.setAccountid(accountId);
         account.setUsername(username);
 
-        // The sequence here ensures that the account ID is fetched first,
-        // then the new username check and finally attempts to save if the username doesn't exist.
         when(mockRepository.findByAccountid(accountId)).thenReturn(account);
         when(mockRepository.findByUsername(username)).thenReturn(null);
         when(mockRepository.saveAndFlush(account)).thenReturn(account);
 
-        // Act
         updateAccount.adminOperate();
 
-        // Assert
         verify(mockScanner, times(5)).next();
-        verify(mockRepository).findByUsername(username); // Ensure this call is expected in the actual method logic
-        verify(mockRepository).saveAndFlush(account); // Confirm save is called
-        verify(mockDisplayAccountDetail, times(3)).display(accountId); // Display is called post-update
+        verify(mockRepository).findByUsername(username);
+        verify(mockRepository).saveAndFlush(account);
+        verify(mockDisplayAccountDetail, times(3)).display(accountId);
     }
 
 
     @Test
     public void testAdminOperate_InvalidPinCode() {
-        // Arrange
+
         Long accountId = 1L;
-        String invalidPin = "1234"; // Invalid because it's not 5 digits
+        String invalidPin = "1234";
         when(mockScanner.next()).thenReturn("2", invalidPin);
         when(mockScanner.nextLong()).thenReturn(accountId);
         CustomerAccount account = new CustomerAccount();
         account.setAccountid(accountId);
         when(mockRepository.findByAccountid(accountId)).thenReturn(account);
 
-        // Act
         updateAccount.adminOperate();
 
-        // Assert
-        verify(mockScanner, times(2)).next(); // For choice, invalid pin, and exit
-        verify(mockRepository, never()).saveAndFlush(account); // Should not save because pin is invalid
+        verify(mockScanner, times(2)).next();
+        verify(mockRepository, never()).saveAndFlush(account);
     }
 
     @Test
     public void testAdminOperate_AccountDoesNotExist() {
-        // Arrange
         Long accountId = 1L;
         when(mockScanner.next()).thenReturn("1", "return");
         when(mockScanner.nextLong()).thenReturn(accountId);
         when(mockRepository.findByAccountid(accountId)).thenReturn(null);
 
-        // Act
         updateAccount.adminOperate();
 
-        // Assert
         verify(mockScanner, atLeastOnce()).next();
         verify(mockRepository).findByAccountid(accountId);
         assertTrue(outContent.toString().contains("***Non account exist***"));
@@ -121,13 +108,11 @@ public class UpdateAccountTest {
 
     @Test
     public void testAdminOperate_ReturnAtStart1() {
-        // Arrange
+
         when(mockScanner.next()).thenReturn("return");
 
-        // Act
         updateAccount.adminOperate();
 
-        // Assert
         verify(mockScanner).next();
         verifyNoInteractions(mockRepository);
     }
@@ -151,19 +136,101 @@ public class UpdateAccountTest {
 
     @Test
     public void testAdminOperate_NonExistentAccount() {
-        // Arrange
         Long accountId = 1L;
         when(mockScanner.next()).thenReturn("return");
-        // Since we are immediately returning, we don't need to mock further interactions
-        // when(mockScanner.nextLong()).thenReturn(accountId);
-        // when(mockRepository.findByAccountid(accountId)).thenReturn(null);
 
-        // Act
         updateAccount.adminOperate();
 
-        // Assert
-        verify(mockScanner).next(); // Only verify that next() is called once
-        verifyNoInteractions(mockRepository); // Ensure no interactions with the repository
+        verify(mockScanner).next();
+        verifyNoInteractions(mockRepository);
+    }
+    @Test
+    public void testAdminOperate_UpdatePinCodeSuccess() {
+        Long accountId = 1L;
+        String validPin = "12345";
+        when(mockScanner.next()).thenReturn("1","2", validPin);
+        when(mockScanner.nextLong()).thenReturn(accountId);
+        CustomerAccount account = new CustomerAccount();
+        account.setAccountid(accountId);
+        when(mockRepository.findByAccountid(accountId)).thenReturn(account);
+        when(mockRepository.saveAndFlush(account)).thenReturn(account);
+
+        updateAccount.adminOperate();
+
+        verify(mockScanner, times(5)).next();
+        verify(mockRepository).saveAndFlush(account);
+        assertTrue(outContent.toString().contains("Update pin code Successfully!"));
+    }
+
+    @Test
+    public void testAdminOperate_UpdateHolderNameSuccess() {
+        Long accountId = 1L;
+        String newHolderName = "John Doe";
+        when(mockScanner.next()).thenReturn("1", "3", newHolderName);
+        when(mockScanner.nextLong()).thenReturn(accountId);
+        CustomerAccount account = new CustomerAccount();
+        account.setAccountid(accountId);
+        when(mockRepository.findByAccountid(accountId)).thenReturn(account);
+        when(mockRepository.saveAndFlush(account)).thenReturn(account);
+
+        updateAccount.adminOperate();
+
+        verify(mockScanner, times(5)).next();
+        verify(mockRepository).saveAndFlush(account);
+        assertTrue(outContent.toString().contains("Update holder name Successfully!"));
+    }
+    @Test
+    public void testAdminOperate_UpdateStatusSuccess() {
+
+        Long accountId = 1L;
+        String newBalance = "1000";
+        when(mockScanner.next()).thenReturn("1", "4", newBalance);
+        when(mockScanner.nextLong()).thenReturn(accountId);
+        CustomerAccount account = new CustomerAccount();
+        account.setAccountid(accountId);
+        when(mockRepository.findByAccountid(accountId)).thenReturn(account);
+        when(mockRepository.saveAndFlush(account)).thenReturn(account);
+
+        updateAccount.adminOperate();
+
+        verify(mockScanner, times(5)).next();
+        verify(mockRepository).saveAndFlush(account);
+        assertTrue(outContent.toString().contains("Update status Successfully!"));
+    }
+    @Test
+    public void testAdminOperate_ExitOnInputNine() {
+        Long accountId = 1L;
+        when(mockScanner.next()).thenReturn("1", "9");
+        when(mockScanner.nextLong()).thenReturn(accountId);
+        CustomerAccount account = new CustomerAccount();
+        account.setAccountid(accountId);
+        when(mockRepository.findByAccountid(accountId)).thenReturn(account);
+
+        updateAccount.adminOperate();
+
+        verify(mockScanner, times(2)).next();
+        verify(mockRepository, never()).saveAndFlush(any(CustomerAccount.class));
+        assertTrue(outContent.toString().contains("***Have exited***"));
+    }
+
+    @Test
+    public void testAdminOperate_MultipleInvalidPinBeforeSuccess() {
+
+        Long accountId = 1L;
+        String invalidPin = "1234";
+        String validPin = "54321";
+        when(mockScanner.next()).thenReturn("1", "2", invalidPin, invalidPin, validPin, "9");
+        when(mockScanner.nextLong()).thenReturn(accountId);
+        CustomerAccount account = new CustomerAccount();
+        account.setAccountid(accountId);
+        when(mockRepository.findByAccountid(accountId)).thenReturn(account);
+        when(mockRepository.saveAndFlush(account)).thenReturn(account);
+
+        updateAccount.adminOperate();
+
+        verify(mockScanner, times(7)).next();
+        verify(mockRepository).saveAndFlush(account);
+        assertTrue(outContent.toString().contains("Update pin code Successfully!"));
     }
 
 }

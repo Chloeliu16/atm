@@ -15,48 +15,48 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DisplayBalance implements ICustomerOperate {
-    @Autowired
+  @Autowired
     private CustomerAccountRepository customerAccountRepository;
-    private final Scanner scanner;
+  private final Scanner scanner;
 
-    /**
-     * Constructs a DisplayBalance service with dependencies injected via Spring's @Autowired annotation.
-     *
-     * @param scanner                   Scanner object to read user inputs.
-     * @param customerAccountRepository Repository to interact with customer account data.
-     */
+  /**
+   * Constructs a DisplayBalance service with dependencies injected via Spring's @Autowired annotation.
+   *
+   * @param scanner                   Scanner object to read user inputs.
+   * @param customerAccountRepository Repository to interact with customer account data.
+   */
 
-    public DisplayBalance(Scanner scanner, CustomerAccountRepository customerAccountRepository) {
-        this.scanner = scanner;
-        this.customerAccountRepository = customerAccountRepository;
+  public DisplayBalance(Scanner scanner, CustomerAccountRepository customerAccountRepository) {
+    this.scanner = scanner;
+    this.customerAccountRepository = customerAccountRepository;
+  }
+
+  /**
+   * Executes the operation to display the balance of a customer's account.
+   * Retrieves the account details based on the provided login identifier and displays the current balance along with the date and time of the inquiry.
+   *
+   * @param login The login identifier of the customer whose balance is being queried.
+   */
+
+  public void customerOperate(String login) {
+    try {
+      CustomerAccount account = customerAccountRepository.findByUsername(login);
+      if (account == null) {
+        System.out.println("No account found for the provided login details.");
+        return; // Early exit if the account is not found
+      }
+
+      System.out.println("===Your account detail is:");
+      System.out.println("Account #" + account.getAccountid());
+      LocalDateTime now = LocalDateTime.now();
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+      String formattedDate = now.format(formatter);
+      System.out.println("Date: " + formattedDate);
+      System.out.println("Balance: " + account.getBalance());
+      System.out.println("Press any number to return");
+      scanner.next();
+    } catch (DataAccessException e) {
+      System.out.println("Error accessing data: " + e.getMessage());
     }
-
-    /**
-     * Executes the operation to display the balance of a customer's account.
-     * Retrieves the account details based on the provided login identifier and displays the current balance along with the date and time of the inquiry.
-     *
-     * @param login The login identifier of the customer whose balance is being queried.
-     */
-
-    public void customerOperate(String login) {
-        try {
-            CustomerAccount account = customerAccountRepository.findByUsername(login);
-            if (account == null) {
-                System.out.println("No account found for the provided login details.");
-                return; // Early exit if the account is not found
-            }
-
-            System.out.println("===Your account detail is:");
-            System.out.println("Account #" + account.getAccountid());
-            LocalDateTime now = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            String formattedDate = now.format(formatter);
-            System.out.println("Date: " + formattedDate);
-            System.out.println("Balance: " + account.getBalance());
-            System.out.println("Press any number to return");
-            scanner.next();
-        } catch (DataAccessException e) {
-            System.out.println("Error accessing data: " + e.getMessage());
-        }
-    }
+  }
 }

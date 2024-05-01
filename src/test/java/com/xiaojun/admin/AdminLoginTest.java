@@ -74,20 +74,17 @@ public class AdminLoginTest {
     }
     @Test
     public void testDataAccessException() {
-        // Setup
+
         when(scanner.next()).thenReturn("admin", "1234");
         when(adminAccountRepository.findByLoginAndPincode("admin", "1234"))
                 .thenThrow(new RuntimeException("Database error"));
 
-        // Execution
         try {
             adminLogin.accountLogin();
         } catch (RuntimeException e) {
-            // If the exception is not supposed to propagate, this block should not execute
             fail("Exception was not expected to propagate to the test: " + e.getMessage());
         }
 
-        // Verification
         assertTrue(outContent.toString().contains("Error accessing data: Database error"));
     }
 

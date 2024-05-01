@@ -66,11 +66,11 @@ public class MainTest {
         CommandLineRunner runner = main.commandLineRunner(ctx);
         runner.run(new String[]{});
 
-        verify(atm).login(adminLogin); // Ensuring the login method is called with the adminLogin
+        verify(atm).login(adminLogin);
         assertTrue(outContent.toString().contains("===WELCOME, Please choose your user type==="));
 
         assertTrue(outContent.toString().contains("Please select: "));
-        assertFalse(outContent.toString().contains("***Your enter is wrong***!")); // This line checks that the incorrect input message is not displayed
+        assertFalse(outContent.toString().contains("***Your enter is wrong***!"));
 
         System.setIn(System.in);
         System.setOut(System.out);

@@ -34,7 +34,7 @@ public class DeleteAccountTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        // Provide both the login name and confirmation number in the input
+
         String input = "testLogin\n9\n";
         deleteAccount = new DeleteAccount(scanner, customerAccountRepository);
         System.setOut(new PrintStream(outContent));
@@ -45,12 +45,11 @@ public class DeleteAccountTest {
     }
     @Test
     void testDeleteAccountSuccess() {
-        // Arrange
+
         String loginName = "user123";
         CustomerAccount exist = new CustomerAccount();
         exist.setUsername(loginName);
 
-        // Setting up the mock to return values for each call to scanner.next()
         when(scanner.next()).thenReturn(loginName, "9", "any number");
 
         when(customerAccountRepository.findByUsername(loginName)).thenReturn(exist);
@@ -65,20 +64,16 @@ public class DeleteAccountTest {
     }
     @Test
     void testAccountNotFound() {
-        // Arrange
         String loginName = "nonexistent";
         when(scanner.next()).thenReturn(loginName, "0");
         when(customerAccountRepository.findByUsername(loginName)).thenReturn(null);
 
-        // Act
         deleteAccount.adminOperate();
 
-        // Assert
         verify(customerAccountRepository).findByUsername(loginName);
         verify(customerAccountRepository, never()).delete(any(CustomerAccount.class));
-        verify(scanner, times(2)).next(); // check for the two inputs
+        verify(scanner, times(2)).next();
     }
-    // Add more tests for other scenarios, such as canceling the delete operation, handling non-existing account, etc.
 
 
     @Test
@@ -88,50 +83,41 @@ public class DeleteAccountTest {
         when(scanner.next()).thenReturn(loginName);
         when(customerAccountRepository.findByUsername(loginName)).thenThrow(new DataAccessException("Database error") {});
 
-        // Act
         deleteAccount.adminOperate();
 
-        // Assert
         assertTrue(outContent.toString().contains("Error accessing data: Database error"));
     }
 
     @Test
     void testExitWithoutDeletion() {
-        // Arrange
+
         String loginName = "user123";
         CustomerAccount exist = new CustomerAccount();
         exist.setUsername(loginName);
 
-        // Setting up the mock to return values for each call to scanner.next()
         when(scanner.next()).thenReturn(loginName, "9", "0");
         when(customerAccountRepository.findByUsername(loginName)).thenReturn(exist);
 
-        // Act
         deleteAccount.adminOperate();
 
-        // Assert
         verify(customerAccountRepository).delete(exist);
         assertTrue(outContent.toString().contains("Press any number to exit"));
     }
     @Test
     void testInvalidCommandInput() {
-        // Arrange
+
         String loginName = "user123";
         CustomerAccount exist = new CustomerAccount();
         exist.setUsername(loginName);
 
-        // Setting up the mock to return values for each call to scanner.next()
         when(scanner.next()).thenReturn(loginName, "invalid_command", "0");
         when(customerAccountRepository.findByUsername(loginName)).thenReturn(exist);
 
-        // Act
         deleteAccount.adminOperate();
 
-        // Assert
         verify(customerAccountRepository).findByUsername(loginName);
         verify(customerAccountRepository, never()).delete(any(CustomerAccount.class));
         assertTrue(outContent.toString().contains("***Invalid input, please try again***"));
         assertTrue(outContent.toString().contains("If you want to cancel delete operation, press 0 to back"));
     }
-
 }

@@ -46,61 +46,46 @@ public class AdminUITest {
 
     @Test
     public void testCreateAccountOptionSelected() {
-        // Mock user input
-        when(mockScanner.nextInt()).thenReturn(1, 5); // Simulate user selecting option 1 and then 5
+        when(mockScanner.nextInt()).thenReturn(1, 5);
 
-        // Call the method under test
         adminUI.showAdminUI();
 
-        // Verify that createAccount.adminOperate() is called
         verify(mockCreateAccount, times(1)).adminOperate();
     }
 
     @Test
     public void testDeleteAccountOptionSelected() {
-        // Mock user input
-        when(mockScanner.nextInt()).thenReturn(2, 5); // Simulate user selecting option 2 and then 5
+        when(mockScanner.nextInt()).thenReturn(2, 5);
 
-        // Call the method under test
         adminUI.showAdminUI();
 
-        // Verify that deleteAccount.adminOperate() is called
         verify(mockDeleteAccount, times(1)).adminOperate();
     }
 
     @Test
     public void testUpdateAccountOptionSelected() {
-        // Mock user input
-        when(mockScanner.nextInt()).thenReturn(3, 5); // Simulate user selecting option 3 and then 5
+        when(mockScanner.nextInt()).thenReturn(3, 5);
 
-        // Call the method under test
         adminUI.showAdminUI();
 
-        // Verify that updateAccount.adminOperate() is called
         verify(mockUpdateAccount, times(1)).adminOperate();
     }
 
     @Test
     public void testSearchAccountOptionSelected() {
-        // Mock user input
-        when(mockScanner.nextInt()).thenReturn(4, 5); // Simulate user selecting option 4 and then 5
+        when(mockScanner.nextInt()).thenReturn(4, 5);
 
-        // Call the method under test
         adminUI.showAdminUI();
 
-        // Verify that searchAccount.adminOperate() is called
         verify(mockSearchAccount, times(1)).adminOperate();
     }
 
     @Test
     public void testExitOptionSelected() {
-        // Mock user input
-        when(mockScanner.nextInt()).thenReturn(5); // Simulate user selecting option 5
+        when(mockScanner.nextInt()).thenReturn(5);
 
-        // Call the method under test
         adminUI.showAdminUI();
 
-        // Verify that the loop breaks and no other methods are called
         verify(mockCreateAccount, never()).adminOperate();
         verify(mockDeleteAccount, never()).adminOperate();
         verify(mockUpdateAccount, never()).adminOperate();

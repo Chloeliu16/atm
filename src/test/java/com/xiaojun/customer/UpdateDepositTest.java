@@ -43,7 +43,7 @@ public class UpdateDepositTest {
 
     @Test
     void testCustomerOperate_SuccessfulDeposit() {
-        // Arrange
+
         String login = "user123";
         double depositAmount = 100.0;
         CustomerAccount mockAccount = new CustomerAccount();
@@ -51,22 +51,19 @@ public class UpdateDepositTest {
         mockAccount.setAccountid(1L);
 
         when(mockScanner.nextDouble()).thenReturn(depositAmount);
-        when(mockScanner.next()).thenReturn("1"); // Simulating pressing any number to return
+        when(mockScanner.next()).thenReturn("1");
         when(mockRepository.findByUsername(login)).thenReturn(mockAccount);
         when(mockRepository.saveAndFlush(any(CustomerAccount.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-        // Act
         updateDeposit.customerOperate(login);
 
-        // Assert
-        verify(mockScanner, times(1)).nextDouble(); // Ensure amount is read from the user
-        verify(mockRepository, times(1)).saveAndFlush(mockAccount); // Ensure the account is saved
+        verify(mockScanner, times(1)).nextDouble();
+        verify(mockRepository, times(1)).saveAndFlush(mockAccount);
         assert(mockAccount.getBalance() == 300.0);
     }
 
     @Test
     void testCustomerOperate_SuccessfulDeposit1() {
-        // Arrange
         String login = "user123";
         double depositAmount = 100.0;
         CustomerAccount mockAccount = new CustomerAccount();
@@ -74,17 +71,15 @@ public class UpdateDepositTest {
         mockAccount.setAccountid(1L);
 
         when(mockScanner.nextDouble()).thenReturn(depositAmount);
-        when(mockScanner.next()).thenReturn("1"); // Simulating pressing any number to return
-        when(mockRepository.findByUsername(login)).thenReturn(mockAccount); // Ensure that findByUsername returns a non-null object
-        when(mockRepository.saveAndFlush(any(CustomerAccount.class))).thenReturn(mockAccount); // Ensure that saveAndFlush returns a non-null object
+        when(mockScanner.next()).thenReturn("1");
+        when(mockRepository.findByUsername(login)).thenReturn(mockAccount);
+        when(mockRepository.saveAndFlush(any(CustomerAccount.class))).thenReturn(mockAccount);
 
-        // Act
         updateDeposit.customerOperate(login);
 
-        // Assert
-        verify(mockScanner, times(1)).nextDouble(); // Ensure amount is read from the user
-        verify(mockRepository, times(1)).saveAndFlush(mockAccount); // Ensure the account is saved
-        assertEquals(300.0, mockAccount.getBalance(), 0.0); // Check that the balance is updated correctly
+        verify(mockScanner, times(1)).nextDouble();
+        verify(mockRepository, times(1)).saveAndFlush(mockAccount);
+        assertEquals(300.0, mockAccount.getBalance(), 0.0);
         assertTrue(outContent.toString().contains("Deposit Successfully! Your current balance is: 300.0"));
     }
 
