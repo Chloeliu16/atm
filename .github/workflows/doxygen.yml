@@ -1,0 +1,30 @@
+name: Documentation
+
+on: #(1)
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  page_build:
+
+jobs:
+  doxygen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set git user
+        run:
+          git config --global user.name "Xiaojun Liu"
+          git config --global user.email "chloeliu2310@gmail.com"
+      - uses: actions/checkout@v1
+      - name: Build documentation
+        uses: mattnotmitt/doxygen-action@v1 #(2)
+        with:
+          doxyfile-path: ./Doxyfile #(3)
+      - name: Deploy documentation
+        uses: peaceiris/actions-gh-pages@v3 #(4)
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs #(5)
+          commit_message: '[ci skip] ${{ github.event.head_commit.message }}' #(6)
