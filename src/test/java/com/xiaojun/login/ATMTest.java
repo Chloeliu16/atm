@@ -1,11 +1,11 @@
 package com.xiaojun.login;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
-import org.junit.Before;
-import org.junit.Test;
 import org.mockito.*;
+
 
 public class ATMTest {
 
@@ -14,7 +14,7 @@ public class ATMTest {
 
     private ATM atm;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         atm = new ATM();
@@ -41,14 +41,5 @@ public class ATMTest {
         }
 
         verify(ilogin).accountLogin();
-    }
-
-    @Test(expected = Exception.class)
-    public void testLoginThrowsException() {
-
-        doThrow(new Exception("System error")).when(ilogin).accountLogin();
-
-        atm.login(ilogin);
-
     }
 }

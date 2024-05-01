@@ -42,7 +42,6 @@ public class DisplayBalanceTest {
 
     @Test
     public void testCustomerOperate_DisplaySuccessful() {
-        // Arrange
         String login = "user123";
         CustomerAccount mockAccount = new CustomerAccount();
         mockAccount.setAccountid(1L);
@@ -50,64 +49,53 @@ public class DisplayBalanceTest {
         when(mockRepository.findByUsername(login)).thenReturn(mockAccount);
         when(mockScanner.next()).thenReturn("1");
 
-        // Act
         displayBalance.customerOperate(login);
 
-        // Assert
         verify(mockRepository, times(1)).findByUsername(login);
         verify(mockScanner, times(1)).next();
     }
 
     @Test
     public void testCustomerOperate_DataAccessException() {
-        // Arrange
         String login = "user123";
         when(mockRepository.findByUsername(login)).thenThrow(new DataAccessException("Database error") {
         });
 
-        // Act
         displayBalance.customerOperate(login);
 
-        // Assert
         verify(mockRepository, times(1)).findByUsername(login);
-        // You might need to capture output to the console if you want to assert on the error message printed
-        // This assumes you have setup to capture System.out output to a ByteArrayOutputStream
+
         assertTrue(outContent.toString().contains("Error accessing data: Database error"));
-        verify(mockScanner, never()).next(); // Ensure no further interaction after the exception
+        verify(mockScanner, never()).next();
     }
 
     @Test
     public void testCustomerOperate_AccountNotFound() {
-        // Arrange
+
         String login = "user123";
         when(mockRepository.findByUsername(login)).thenReturn(null);
 
-        // Act
         displayBalance.customerOperate(login);
 
-        // Assert
+
         verify(mockRepository, times(1)).findByUsername(login);
         assertTrue(outContent.toString().contains("No account found for the provided login details."));
-        verify(mockScanner, never()).next(); // Ensuring that the method exits before asking for any input
+        verify(mockScanner, never()).next();
     }
 
     @Test
     public void testCustomerOperate_MultipleInputsBeforeExit() {
-        // Arrange
+
         String login = "user123";
         CustomerAccount mockAccount = new CustomerAccount();
         mockAccount.setAccountid(1L);
         mockAccount.setBalance(1500.0);
         when(mockRepository.findByUsername(login)).thenReturn(mockAccount);
-        when(mockScanner.next()).thenReturn("1"); // Correctly simulate inputs
+        when(mockScanner.next()).thenReturn("1");
 
-        // Act
         displayBalance.customerOperate(login);
 
-        // Assert
         verify(mockRepository, times(1)).findByUsername(login);
-        verify(mockScanner, times(1)).next(); // Ensure nextInt() is called for command inputs
+        verify(mockScanner, times(1)).next();
     }
-
-
 }
