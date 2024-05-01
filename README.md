@@ -8,6 +8,6 @@ For simple testing, you can use the following accounts included in the database
 
 We have added unit tests, code coverage, and CI/CD in this repo to ensure a high quality codebase.
 
-
+For class documentation, please read ReadTheDoc.pdf.
 
 
