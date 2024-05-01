@@ -21,6 +21,6 @@ jobs:
       - name: Deploy documentation
         uses: peaceiris/actions-gh-pages@v3 #(4)
         with:
-          github_token: ${{ secrets.DOXY_T }}
+          github_token: ${{ secrets.D_T }}
           publish_dir: ./docs #(5)
           commit_message: '[ci skip] ${{ github.event.head_commit.message }}' #(6)
